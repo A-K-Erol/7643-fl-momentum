@@ -2,6 +2,11 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from flwr_datasets import FederatedDataset
 from config import Config
+from flwr_datasets.partitioner import (
+    DirichletPartitioner, 
+    Partitioner, 
+    DistributionPartitioner
+)
 
 def load_datasets(
     partition_id: int
@@ -18,38 +23,16 @@ def load_datasets(
         partitioner_config: Additional configuration for partitioners
     """
     
-    default_config = {
-        'dirichlet': {
-            'alpha': Config.DIRILECT_ALPHA,  # Controls non-IID distribution (lower = more skewed)
-        },
-        'label_distribution': {
-            'distribution': None  # Can be customized if needed
-        }
-    }
-    
-    config = default_config.get(Config.PARTITIONER_TYPE, {})
-
-    # Prepare partitioners based on strategy
     if Config.PARTITIONER_TYPE == 'uniform':
-        partitioners = {"train": Config.NUM_CLIENTS}
+        partitioner = Config.NUM_CLIENTS
     elif Config.PARTITIONER_TYPE == 'dirichlet':
-        partitioners = {
-            "train": {
-                "type": "dirichlet",
-                "alpha": config.get('alpha', 0.1),
-                "num_partitions": Config.NUM_CLIENTS
-            }
-        }
+        partitioner = DirichletPartitioner(alpha=Config.DIRILECT_ALPHA, num_partitions=Config.NUM_CLIENTS, partition_by="label")
     elif Config.PARTITIONER_TYPE == 'label_distribution':
-        partitioners = {
-            "train": {
-                "type": "label_distribution",
-                "num_partitions": Config.NUM_CLIENTS,
-                "distribution": config.get('distribution')
-            }
-        }
+        partitioner = DistributionPartitioner(num_partitions=Config.NUM_CLIENTS, distribution_array=Config.get('distribution'))
     else:
         raise ValueError(f"Unsupported partitioner type: {Config.PARTITIONER_TYPE}")
+
+    partitioners = {'train': partitioner}
 
     # Dataset-specific normalization
     normalization_params = {
