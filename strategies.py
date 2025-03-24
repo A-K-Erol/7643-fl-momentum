@@ -10,7 +10,9 @@ from flwr.common import (
     ndarrays_to_parameters,
     parameters_to_ndarrays,
 )
+from flwr.server.strategy.aggregate import aggregate, weighted_loss_avg
 import tensorflow as tf
+import numpy as np
 
 def get_fedavg_strat(eval_strat):
     strategy = FedAvg(
@@ -72,10 +74,7 @@ class _CustomStrategyBase(Strategy):
         """
         Aggregate client updates after each round of training.
         """
-        # weights = [res.parameters for res in results]
-        # avg_weights = [tf.reduce_mean(weight, axis=0) for weight in zip(*weights)]
-        # return Parameters(tensors=avg_weights)
-    
+        # The default is weighted average
         weights_results = [
             (parameters_to_ndarrays(fit_res.parameters), fit_res.num_examples)
             for _, fit_res in results
@@ -88,7 +87,18 @@ class _CustomStrategyBase(Strategy):
         """
         Aggregate evaluation results.
         """
-        return None
+        # The default is weighted average
+        if not results:
+            return None, {}
+
+        loss_aggregated = weighted_loss_avg(
+            [
+                (evaluate_res.num_examples, evaluate_res.loss)
+                for _, evaluate_res in results
+            ]
+        )
+        metrics_aggregated = {}
+        return loss_aggregated, metrics_aggregated
 
     def evaluate(self, parameters, config):
         """
@@ -100,7 +110,6 @@ class _CustomStrategyBase(Strategy):
     def configure_fit(self, rnd, parameters, client_manager):
         """
         Configure the fit operation for clients.
-        You can modify the config here before sending it to clients.
         """
         # Return same config to all available clients
         standard_config = {"lr": 1e-3}
@@ -112,7 +121,6 @@ class _CustomStrategyBase(Strategy):
     def configure_evaluate(self, rnd, parameters, client_manager):
         """
         Configure the evaluation operation for clients.
-        You can modify the config here before sending it to clients.
         """
         if self.fraction_evaluate == 0.0:
             return []
@@ -121,4 +129,12 @@ class _CustomStrategyBase(Strategy):
         config = {}
         available_clients = [client for client in client_manager.clients if client.is_available]
         eval_configs = [(client, EvaluateIns(parameters, config)) for client in available_clients]
+        return eval_configs
+    
+
+class StrategyDefault(_CustomStrategyBase):
+    def __init__(self, fraction_fit = 1, fraction_evaluate = 1, min_fit_clients = 2, min_evaluate_clients = 2, min_available_clients = 2):
+        super().__init__(fraction_fit, fraction_evaluate, min_fit_clients, min_evaluate_clients, min_available_clients)
         
+    def __repr__(self):
+        return "StrategyDefault"
