@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from optimizers import get_adam
+import torch.optim as optim
+from optimizers import DFedAvgM_Optimizer
 import numpy as np
 from collections import OrderedDict
 from typing import List
@@ -30,7 +31,8 @@ def train(net, trainloader, epochs: int, verbose=False):
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
     criterion = torch.nn.CrossEntropyLoss()
-    optimizer = get_adam(net.parameters())
+    optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
+    # optimizer = DFedAvgM_Optimizer(net)
     net.train()
     for epoch in range(epochs):
         correct, total, epoch_loss = 0, 0, 0.0

@@ -1,6 +1,6 @@
 class Config:
-    NUM_CLIENTS = 10
-    NUM_ROUNDS = 20
+    NUM_CLIENTS = 5
+    NUM_ROUNDS = 5
     BATCH_SIZE = 32
     MODEL_NAME = "net"
     DATASET = 'cifar10' # Literal['cifar10', 'cifar100', 'mnist']

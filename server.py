@@ -13,13 +13,6 @@ def server_fn(context: Context) -> ServerAppComponents:
     construction of all elements (e.g the strategy or the number of rounds)
     wrapped in the returned ServerAppComponents object.
     """
-
-    def weighted_average(metrics: List[Tuple[int, Metrics]]) -> Metrics:
-        accuracies = [num_examples * m["accuracy"] for num_examples, m in metrics]
-        examples = [num_examples for num_examples, _ in metrics]
-
-        # Aggregate and return custom metric (weighted average)
-        return {"accuracy": sum(accuracies) / sum(examples)}
     
     metrics_aggregator = create_metrics_aggregator(
         metrics_to_aggregate=['accuracy', 'loss', 'precision', 'recall', 'f1_score'],
