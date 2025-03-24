@@ -1,6 +1,15 @@
 from flwr.server.strategy import FedAvg, FedAdam, Strategy
 import flwr as fl
-from flwr.common import Parameters, FitRes, EvaluateIns
+from flwr.common import (
+    EvaluateIns,
+    EvaluateRes,
+    FitIns,
+    FitRes,
+    Parameters,
+    Scalar,
+    ndarrays_to_parameters,
+    parameters_to_ndarrays,
+)
 import tensorflow as tf
 
 def get_fedavg_strat(eval_strat):
@@ -33,23 +42,47 @@ def get_fedadam_strat(eval_strat, eta=1e-1, eta_I=1e-1, beta_1=0.9, beta_2=0.99,
     return strategy
 
 class _CustomStrategyBase(Strategy):
+    """
+    Base class which is to be extended for each custom strategy.
+    """
 
-    def __init__(self):
+    def __init__(
+            self,         
+            fraction_fit: float = 1.0,
+            fraction_evaluate: float = 1.0,
+            min_fit_clients: int = 2,
+            min_evaluate_clients: int = 2,
+            min_available_clients: int = 2
+    ):
         super().__init__()
+        self.fraction_fit = fraction_fit
+        self.fraction_evaluate = fraction_evaluate
+        self.min_fit_clients = min_fit_clients
+        self.min_evaluate_clients = min_evaluate_clients
+        self.min_available_clients = min_available_clients
 
     def initialize_parameters(self, config):
         """
         Initialize parameters for the federated learning model.
         """
+        # TODO: Change based on how to get number of parameters in net
         return Parameters(tensors=[tf.random.normal((10, 10)) for _ in range(5)])
 
     def aggregate_fit(self, rnd, results, failures):
         """
         Aggregate client updates after each round of training.
         """
-        weights = [res.parameters for res in results]
-        avg_weights = [tf.reduce_mean(weight, axis=0) for weight in zip(*weights)]
-        return Parameters(tensors=avg_weights)
+        # weights = [res.parameters for res in results]
+        # avg_weights = [tf.reduce_mean(weight, axis=0) for weight in zip(*weights)]
+        # return Parameters(tensors=avg_weights)
+    
+        weights_results = [
+            (parameters_to_ndarrays(fit_res.parameters), fit_res.num_examples)
+            for _, fit_res in results
+        ]
+        parameters_aggregated = ndarrays_to_parameters(aggregate(weights_results))
+        metrics_aggregated = {}
+        return parameters_aggregated, metrics_aggregated
     
     def aggregate_evaluate(self, server_round, results, failures):
         """
@@ -61,23 +94,31 @@ class _CustomStrategyBase(Strategy):
         """
         Override to implement custom evaluation logic.
         """
-        return 0.4, 0.85  # Dummy evaluation result
+        # Default is not to override
+        return None
 
-    def configure_fit(self, rnd, parameters, client_manager, config):
+    def configure_fit(self, rnd, parameters, client_manager):
         """
         Configure the fit operation for clients.
         You can modify the config here before sending it to clients.
         """
-        # For example, configure learning rate or batch size for each client
-        config["learning_rate"] = 0.01
-        config["batch_size"] = 32
-        return config  # This modified config will be passed to clients
+        # Return same config to all available clients
+        standard_config = {"lr": 1e-3}
+        available_clients = [client for client in client_manager.clients if client.is_available]
+        fit_configs = [(client, FitIns(parameters, standard_config)) for client in available_clients]
+        return fit_configs
 
-    def configure_evaluate(self, rnd, parameters, client_manager, config):
+
+    def configure_evaluate(self, rnd, parameters, client_manager):
         """
         Configure the evaluation operation for clients.
         You can modify the config here before sending it to clients.
         """
-        # For example, configure validation data size or other evaluation parameters
-        config["validation_data_size"] = 1000
-        return config  # This modified config will be passed to clients
+        if self.fraction_evaluate == 0.0:
+            return []
+        
+        # Return same config to all available clients
+        config = {}
+        available_clients = [client for client in client_manager.clients if client.is_available]
+        eval_configs = [(client, EvaluateIns(parameters, config)) for client in available_clients]
+        
