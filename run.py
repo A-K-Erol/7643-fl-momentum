@@ -9,6 +9,7 @@ from client import client_fn
 from server import server_fn
 from flwr.simulation import run_simulation
 import torch
+from config import Config
 
 
 
@@ -23,6 +24,6 @@ if DEVICE == "cuda":
 run_simulation(
     server_app=server,
     client_app=client,
-    num_supernodes=10,
+    num_supernodes=Config.NUM_CLIENTS,
     backend_config=backend_config,
 )
