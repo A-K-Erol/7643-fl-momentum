@@ -20,8 +20,8 @@ mess with the aggregation strategies in strategies.py, fedavg is the default one
     * SGD
 - Explore different momentums:
     * Polyak
-    * Netsorov
-    * QHM  (not in pytorch, but already implemented somewhere)
-    * Rectified Adam
-    * ACC SGD
+    * Netsorov (Aamir)
+    * QHM  (not in pytorch, but already implemented somewhere) (Alireza)
+    * Rectified Adam (Mike)
+    * ACC SGD (Ansel)
 - Do we need momentum for server side aggregation or just client side is okay?
