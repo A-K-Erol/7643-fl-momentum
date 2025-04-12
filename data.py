@@ -4,7 +4,7 @@ from flwr_datasets import FederatedDataset
 from config import Config
 from flwr_datasets.partitioner import (
     DirichletPartitioner, 
-    Partitioner, 
+    IidPartitioner, 
     DistributionPartitioner
 )
 
@@ -24,7 +24,7 @@ def load_datasets(
     """
     
     if Config.PARTITIONER_TYPE == 'uniform':
-        partitioner = Config.NUM_CLIENTS
+        partitioner = IidPartitioner(num_partitions=Config.NUM_CLIENTS)
     elif Config.PARTITIONER_TYPE == 'dirichlet':
         partitioner = DirichletPartitioner(alpha=Config.DIRILECT_ALPHA, num_partitions=Config.NUM_CLIENTS, partition_by="label")
     elif Config.PARTITIONER_TYPE == 'label_distribution':

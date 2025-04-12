@@ -5,13 +5,16 @@ from data import load_datasets
 from config import Config
 import torch
 import torch.nn as nn
+import csv
+metrics : dict[str, float] = {}
 
 class FlowerClient(NumPyClient):
-    def __init__(self, net, trainloader, valloader, testloader):
+    def __init__(self, net, trainloader, valloader, testloader, partition_id):
         self.net = net
         self.trainloader = trainloader
         self.valloader = valloader
         self.testloader = testloader
+        self.partition_id = partition_id
 
     def get_parameters(self, config):
         return get_parameters(self.net)
@@ -27,6 +30,12 @@ class FlowerClient(NumPyClient):
         # loss, accuracy = test(self.net, self.valloader)
         metrics = compute_metrics(self.net, self.valloader)
         
+        with open(f"metrics_client_{self.partition_id}_sgd1.csv", "a", newline="") as f:
+            writer = csv.writer(f)
+            if f.tell() == 0:  # If file is empty, write header
+                writer.writerow(["client_id", "accuracy", "f1"])
+            writer.writerow([self.partition_id, metrics["accuracy"], metrics["f1_score"]])
+                        
         return float(metrics['loss']), len(self.valloader), metrics
     
 
@@ -36,7 +45,7 @@ def client_fn(context: Context) -> Client:
     partition_id = context.node_config["partition-id"]
     trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
     
-    return FlowerClient(net, trainloader, valloader, test_loader).to_client()
+    return FlowerClient(net, trainloader, valloader, test_loader, partition_id).to_client()
 
 
 def compute_metrics(model, testloader):

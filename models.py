@@ -30,7 +30,9 @@ def train(net, trainloader, epochs: int, verbose=False):
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
     criterion = torch.nn.CrossEntropyLoss()
-    optimizer = get_adam(net.parameters())
+    # optimizer = get_adam(net.parameters())
+    # optimizer = torch.optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
+    optimizer = torch.optim.SGD(net.parameters(), lr=0.01)
     net.train()
     for epoch in range(epochs):
         correct, total, epoch_loss = 0, 0, 0.0
@@ -94,4 +96,6 @@ def check_centralized_accuracy(net, trainloader, valloader, testloader, epochs=5
 
 def get_model(name):
     if name == "net":
+        # model = torch.hub.load('pytorch/vision:v0.10.0', 'mobilenet_v2', pretrained=False)
+        # return model
         return Net()
