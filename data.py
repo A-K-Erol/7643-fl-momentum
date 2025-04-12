@@ -26,9 +26,7 @@ def load_datasets(
     if Config.PARTITIONER_TYPE == 'uniform':
         partitioner = IidPartitioner(num_partitions=Config.NUM_CLIENTS)
     elif Config.PARTITIONER_TYPE == 'dirichlet':
-        partitioner = DirichletPartitioner(alpha=Config.DIRILECT_ALPHA, num_partitions=Config.NUM_CLIENTS, partition_by="label")
-    elif Config.PARTITIONER_TYPE == 'label_distribution':
-        partitioner = DistributionPartitioner(num_partitions=Config.NUM_CLIENTS, distribution_array=Config.get('distribution'))
+        partitioner = DirichletPartitioner(alpha=Config.DIRILECT_ALPHA, num_partitions=Config.NUM_CLIENTS, partition_by="coarse_label" if Config.DATASET == 'cifar100' else "label")
     else:
         raise ValueError(f"Unsupported partitioner type: {Config.PARTITIONER_TYPE}")
 
@@ -43,10 +41,6 @@ def load_datasets(
         'cifar100': {
             'mean': (0.5071, 0.4867, 0.4408),
             'std': (0.2675, 0.2565, 0.2761)
-        },
-        'mnist': {
-            'mean': (0.1307,),
-            'std': (0.3081,)
         }
     }
 
@@ -56,26 +50,18 @@ def load_datasets(
     partition_train_test = partition.train_test_split(test_size=0.2, seed=42)
     
     # Prepare transforms based on dataset
-    if Config.DATASET in ['cifar10', 'cifar100']:
-        pytorch_transforms = transforms.Compose([
-            transforms.ToTensor(), 
-            transforms.Normalize(
-                mean=normalization_params[Config.DATASET]['mean'], 
-                std=normalization_params[Config.DATASET]['std']
-            )
-        ])
-    elif Config.DATASET == 'mnist':
-        pytorch_transforms = transforms.Compose([
-            transforms.ToTensor(), 
-            transforms.Normalize(
-                mean=normalization_params['mnist']['mean'], 
-                std=normalization_params['mnist']['std']
-            )
-        ])
+    pytorch_transforms = transforms.Compose([
+        transforms.ToTensor(), 
+        transforms.Normalize(
+            mean=normalization_params[Config.DATASET]['mean'], 
+            std=normalization_params[Config.DATASET]['std']
+        )
+    ])
+    
 
     # Apply transforms
     def apply_transforms(batch):
-        image_name = "img" if Config.DATASET != "mnist" else "image"
+        image_name = "img"
         batch[image_name] = [pytorch_transforms(img) for img in batch[image_name]]
         return batch
         

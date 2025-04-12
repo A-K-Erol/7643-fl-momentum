@@ -30,7 +30,7 @@ class FlowerClient(NumPyClient):
         # loss, accuracy = test(self.net, self.valloader)
         metrics = compute_metrics(self.net, self.valloader)
         
-        with open(f"metrics_client_{self.partition_id}_sgd1.csv", "a", newline="") as f:
+        with open(f"results/metrics_client_{self.partition_id}_{Config.DATASET}_{Config.OPTIMIZER}.csv", "a", newline="") as f:
             writer = csv.writer(f)
             if f.tell() == 0:  # If file is empty, write header
                 writer.writerow(["client_id", "accuracy", "f1"])
@@ -65,7 +65,7 @@ def compute_metrics(model, testloader):
     total_loss = 0.0
     
     # Prepare for multi-class metrics
-    num_classes = len(testloader.dataset.features['label'].names)
+    num_classes = len(testloader.dataset.features['label' if Config.DATASET == 'cifar10' else 'fine_label'].names)
     confusion_matrix = torch.zeros(num_classes, num_classes, dtype=torch.long)
     
     criterion = nn.CrossEntropyLoss()
@@ -73,7 +73,7 @@ def compute_metrics(model, testloader):
     with torch.no_grad():
         for batch in testloader:
             inputs = batch['img']
-            labels = batch['label']
+            labels = batch['label' if Config.DATASET == 'cifar10' else 'fine_label'] # fix
             
             outputs = model(inputs)
             loss = criterion(outputs, labels)

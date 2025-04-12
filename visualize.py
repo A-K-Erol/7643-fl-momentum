@@ -11,6 +11,9 @@ import re
 os.makedirs('visualizations', exist_ok=True)
 
 # Define the optimizers and corresponding file patterns
+
+
+# we will need to update these...
 optimizers = {
     'adam': 'metrics_client_*_adam.csv',
     'Vanilla SGD': 'metrics_client_*_sgd1.csv',  # SGD without momentum
