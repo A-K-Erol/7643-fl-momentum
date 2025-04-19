@@ -5,13 +5,16 @@ from data import load_datasets
 from config import Config
 import torch
 import torch.nn as nn
+import csv
+metrics : dict[str, float] = {}
 
 class FlowerClient(NumPyClient):
-    def __init__(self, net, trainloader, valloader, testloader):
+    def __init__(self, net, trainloader, valloader, testloader, partition_id):
         self.net = net
         self.trainloader = trainloader
         self.valloader = valloader
         self.testloader = testloader
+        self.partition_id = partition_id
 
     def get_parameters(self, config):
         return get_parameters(self.net)
@@ -27,6 +30,12 @@ class FlowerClient(NumPyClient):
         # loss, accuracy = test(self.net, self.valloader)
         metrics = compute_metrics(self.net, self.valloader)
         
+        with open(f"results/metrics_client_{self.partition_id}_{Config.DATASET}_{Config.OPTIMIZER}.csv", "a", newline="") as f:
+            writer = csv.writer(f)
+            if f.tell() == 0:  # If file is empty, write header
+                writer.writerow(["client_id", "accuracy", "f1"])
+            writer.writerow([self.partition_id, metrics["accuracy"], metrics["f1_score"]])
+                        
         return float(metrics['loss']), len(self.valloader), metrics
     
 
@@ -36,7 +45,7 @@ def client_fn(context: Context) -> Client:
     partition_id = context.node_config["partition-id"]
     trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
     
-    return FlowerClient(net, trainloader, valloader, test_loader).to_client()
+    return FlowerClient(net, trainloader, valloader, test_loader, partition_id).to_client()
 
 
 def compute_metrics(model, testloader):
@@ -56,7 +65,7 @@ def compute_metrics(model, testloader):
     total_loss = 0.0
     
     # Prepare for multi-class metrics
-    num_classes = len(testloader.dataset.features['label'].names)
+    num_classes = len(testloader.dataset.features['label' if Config.DATASET == 'cifar10' else 'fine_label'].names)
     confusion_matrix = torch.zeros(num_classes, num_classes, dtype=torch.long)
     
     criterion = nn.CrossEntropyLoss()
@@ -64,7 +73,7 @@ def compute_metrics(model, testloader):
     with torch.no_grad():
         for batch in testloader:
             inputs = batch['img']
-            labels = batch['label']
+            labels = batch['label' if Config.DATASET == 'cifar10' else 'fine_label'] # fix
             
             outputs = model(inputs)
             loss = criterion(outputs, labels)

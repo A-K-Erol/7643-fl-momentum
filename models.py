@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch.optim as optim
-from optimizers import DFedAvgM_Optimizer
+from config import Config
+from optimizers import get_optimizer
 import numpy as np
 from collections import OrderedDict
 from typing import List
@@ -10,12 +10,14 @@ from typing import List
 class Net(nn.Module):
     def __init__(self) -> None:
         super(Net, self).__init__()
+
+        k = 0 if Config.DATASET == 'cifar10' else 1
         self.conv1 = nn.Conv2d(3, 6, 5)
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(6, 16, 5)
-        self.fc1 = nn.Linear(16 * 5 * 5, 120)
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 10)
+        self.fc1 = nn.Linear(16 * 5 * 5, 120 + 100*k)
+        self.fc2 = nn.Linear(120 + 100*k, 84 + 84*k)
+        self.fc3 = nn.Linear(84 + 84*k, 10 + 90*k)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.pool(F.relu(self.conv1(x)))
@@ -31,13 +33,14 @@ def train(net, trainloader, epochs: int, verbose=False):
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
     criterion = torch.nn.CrossEntropyLoss()
-    optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
-    # optimizer = DFedAvgM_Optimizer(net)
+    optimizer = get_optimizer(net.parameters())
+    net.to(DEVICE)
+    
     net.train()
     for epoch in range(epochs):
         correct, total, epoch_loss = 0, 0, 0.0
         for batch_idx, batch in enumerate(trainloader):
-            images, labels = batch["img"].to(DEVICE), batch["label"].to(DEVICE)
+            images, labels = batch["img"].to(DEVICE), batch["label" if Config.DATASET == 'cifar10' else 'fine_label'].to(DEVICE)
             optimizer.zero_grad()
             outputs = net(images)
             loss = criterion(outputs, labels)
@@ -62,7 +65,7 @@ def test(net, testloader):
     net.eval()
     with torch.no_grad():
         for batch in testloader:
-            images, labels = batch["img"].to(DEVICE), batch["label"].to(DEVICE)
+            images, labels = batch["img"].to(DEVICE), batch["label" if Config.DATASET == 'cifar10' else 'fine_label'].to(DEVICE)
             outputs = net(images)
             loss += criterion(outputs, labels).item()
             _, predicted = torch.max(outputs.data, 1)
@@ -96,4 +99,6 @@ def check_centralized_accuracy(net, trainloader, valloader, testloader, epochs=5
 
 def get_model(name):
     if name == "net":
+        # model = torch.hub.load('pytorch/vision:v0.10.0', 'mobilenet_v2', pretrained=False)
+        # return model
         return Net()
