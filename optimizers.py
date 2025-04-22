@@ -54,3 +54,33 @@ class DFedAvgM_Optimizer:
             param_length = param.numel()
             param.data.copy_(param_tensor[index:index + param_length].view(param.shape))
             index += param_length
+import torch
+from torch.optim.optimizer import Optimizer
+
+class QHM(Optimizer):
+    def __init__(self, params, lr=0.01, momentum=0.9, nu=1.0):
+        assert 0.0 <= nu <= 1.0, "nu must be in [0,1]"
+        assert 0.0 <= momentum < 1.0, "momentum must be in [0,1)"
+        defaults = dict(lr=lr, momentum=momentum, nu=nu)
+        super(QHM, self).__init__(params, defaults)
+
+    def step(self, closure=None):
+        loss = closure() if closure is not None else None
+        for group in self.param_groups:
+            lr = group['lr']
+            beta = group['momentum']
+            nu = group['nu']
+            for p in group['params']:
+                if p.grad is None:
+                    continue
+                grad = p.grad.data
+
+                state = self.state[p]
+                if 'momentum_buffer' not in state:
+                    state['momentum_buffer'] = torch.zeros_like(p.data)
+                buf = state['momentum_buffer']
+
+                buf.mul_(beta).add_(grad, alpha=1 - beta)
+                update = nu * grad + (1 - nu) * buf
+                p.data.add_(-lr, update)
+        return loss
