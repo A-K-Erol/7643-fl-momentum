@@ -11,6 +11,8 @@ from flwr.simulation import run_simulation
 import torch
 from config import Config
 
+import logging
+# from flwr.common.logger import log  # Optional, if you want to use Flower's log function
 
 
 client = ClientApp(client_fn=client_fn)
@@ -20,6 +22,16 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 backend_config = {"client_resources": {"num_cpus": 1, "num_gpus": 0.0}}
 if DEVICE == "cuda":
     backend_config = {"client_resources": {"num_cpus": 1, "num_gpus": 1.0}}
+
+# 1. Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s %(message)s',
+    handlers=[
+        logging.FileHandler("results/flower_simulation.log"),
+        logging.StreamHandler()  # Optional: also print to console
+    ]
+)
 
 run_simulation(
     server_app=server,
