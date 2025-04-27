@@ -11,7 +11,7 @@ def get_optimizer(params, optimizer=Config.OPTIMIZER):
         case 'polyak':
             return optim.SGD(params, lr=0.01, momentum=0.9)
         case 'nesterov':
-            return optim.SGD(params, lr=0.01, momentum=Config.MOMENTUM, nesterov=True) # Aamir
+            return optim.SGD(params, lr=Config.LEARNING_RATE, momentum=Config.MOMENTUM, nesterov=True) # Aamir
         case 'rectified_adam':
             return optim.RAdam(params) # Mike
         case 'qhm':

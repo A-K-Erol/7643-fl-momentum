@@ -29,7 +29,7 @@ logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',
     handlers=[
         logging.FileHandler("results/flower_simulation.log"),
-        logging.StreamHandler()  # Optional: also print to console
+        # logging.StreamHandler()  # Optional: also print to console
     ]
 )
 

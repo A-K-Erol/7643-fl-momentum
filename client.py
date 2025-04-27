@@ -63,6 +63,7 @@ def compute_metrics(model, testloader):
     total_correct = 0
     total_samples = 0
     total_loss = 0.0
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
     
     # Prepare for multi-class metrics
     num_classes = len(testloader.dataset.features['label' if Config.DATASET == 'cifar10' else 'fine_label'].names)
@@ -74,6 +75,9 @@ def compute_metrics(model, testloader):
         for batch in testloader:
             inputs = batch['img']
             labels = batch['label' if Config.DATASET == 'cifar10' else 'fine_label'] # fix
+
+            inputs = inputs.to(DEVICE)
+            labels = labels.to(DEVICE)
             
             outputs = model(inputs)
             loss = criterion(outputs, labels)
