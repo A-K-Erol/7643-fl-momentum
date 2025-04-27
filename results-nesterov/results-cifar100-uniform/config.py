@@ -7,5 +7,5 @@ class Config:
     PARTITIONER_TYPE = 'uniform' # Literal['uniform', 'dirichlet']
     DIRILECT_ALPHA = 0.5 # parameter when using dirichlet (means how close to iid it is)
     OPTIMIZER='nesterov'
-    MOMENTUM=0.9
-    LEARNING_RATE=0.08
+    MOMENTUM=0.8
+    LEARNING_RATE=0.025
