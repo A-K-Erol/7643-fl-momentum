@@ -1,0 +1,1081 @@
+2025-04-27 21:44:54,344 DEBUG Pre-registering run with id 15199523125879024687
+2025-04-27 21:44:54,367 DEBUG Using InMemoryState
+2025-04-27 21:44:54,368 DEBUG Using InMemoryState
+2025-04-27 21:44:54,369 INFO Starting Flower ServerApp, config: num_rounds=50, no round_timeout
+2025-04-27 21:44:54,371 DEBUG Using InMemoryState
+2025-04-27 21:44:54,371 INFO 
+2025-04-27 21:44:54,371 DEBUG Registered 10 nodes
+2025-04-27 21:44:54,371 DEBUG Supported backends: ['ray']
+2025-04-27 21:44:54,372 INFO [INIT]
+2025-04-27 21:44:54,372 DEBUG Initialising: RayBackend
+2025-04-27 21:44:54,372 INFO Requesting initial parameters from one random client
+2025-04-27 21:44:54,372 DEBUG Backend config: {'client_resources': {'num_cpus': 1, 'num_gpus': 0.0}, 'init_args': {'logging_level': 30, 'log_to_driver': True}, 'actor': {'tensorflow': 0}}
+2025-04-27 21:44:57,303 INFO Failed to configure TPU pod. Got: tpu_name: None, worker_id: 0, accelerator_type: v2-8
+2025-04-27 21:44:58,439 DEBUG Constructed ActorPool with: 4 actors
+2025-04-27 21:44:58,440 DEBUG Using InMemoryState
+2025-04-27 21:45:10,654 INFO Received initial parameters from one random client
+2025-04-27 21:45:10,654 INFO Starting evaluation of initial global parameters
+2025-04-27 21:45:10,655 INFO Evaluation returned no results (`None`)
+2025-04-27 21:45:10,655 INFO 
+2025-04-27 21:45:10,655 INFO [ROUND 1]
+2025-04-27 21:45:10,655 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:45:23,890 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:45:23,900 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:45:28,915 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:45:28,916 INFO 
+2025-04-27 21:45:28,916 INFO [ROUND 2]
+2025-04-27 21:45:28,916 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:45:38,747 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:45:38,757 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:45:43,872 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:45:43,872 INFO 
+2025-04-27 21:45:43,873 INFO [ROUND 3]
+2025-04-27 21:45:43,873 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:45:52,797 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:45:52,806 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:45:55,817 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:45:55,818 INFO 
+2025-04-27 21:45:55,818 INFO [ROUND 4]
+2025-04-27 21:45:55,818 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:03,940 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:46:03,949 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:06,459 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:46:06,460 INFO 
+2025-04-27 21:46:06,460 INFO [ROUND 5]
+2025-04-27 21:46:06,460 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:14,485 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:46:14,493 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:17,406 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:46:17,407 INFO 
+2025-04-27 21:46:17,407 INFO [ROUND 6]
+2025-04-27 21:46:17,407 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:25,630 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:46:25,639 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:28,450 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:46:28,450 INFO 
+2025-04-27 21:46:28,451 INFO [ROUND 7]
+2025-04-27 21:46:28,451 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:36,574 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:46:36,582 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:39,493 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:46:39,494 INFO 
+2025-04-27 21:46:39,494 INFO [ROUND 8]
+2025-04-27 21:46:39,494 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:47,718 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:46:47,726 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:50,638 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:46:50,639 INFO 
+2025-04-27 21:46:50,639 INFO [ROUND 9]
+2025-04-27 21:46:50,639 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:46:58,866 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:46:58,875 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:01,787 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:47:01,787 INFO 
+2025-04-27 21:47:01,788 INFO [ROUND 10]
+2025-04-27 21:47:01,788 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:09,313 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:47:09,321 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:12,634 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:47:12,635 INFO 
+2025-04-27 21:47:12,635 INFO [ROUND 11]
+2025-04-27 21:47:12,635 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:20,160 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:47:20,168 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:23,279 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:47:23,279 INFO 
+2025-04-27 21:47:23,279 INFO [ROUND 12]
+2025-04-27 21:47:23,279 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:31,303 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:47:31,312 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:34,125 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:47:34,126 INFO 
+2025-04-27 21:47:34,126 INFO [ROUND 13]
+2025-04-27 21:47:34,126 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:42,148 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:47:42,156 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:44,969 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:47:44,970 INFO 
+2025-04-27 21:47:44,970 INFO [ROUND 14]
+2025-04-27 21:47:44,970 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:53,194 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:47:53,202 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:47:56,015 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:47:56,015 INFO 
+2025-04-27 21:47:56,015 INFO [ROUND 15]
+2025-04-27 21:47:56,015 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:03,837 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:48:03,846 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:07,358 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:48:07,358 INFO 
+2025-04-27 21:48:07,358 INFO [ROUND 16]
+2025-04-27 21:48:07,359 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:15,181 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:48:15,190 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:18,200 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:48:18,201 INFO 
+2025-04-27 21:48:18,201 INFO [ROUND 17]
+2025-04-27 21:48:18,201 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:26,424 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:48:26,433 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:28,942 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:48:28,943 INFO 
+2025-04-27 21:48:28,943 INFO [ROUND 18]
+2025-04-27 21:48:28,943 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:37,068 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:48:37,076 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:39,687 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:48:39,687 INFO 
+2025-04-27 21:48:39,687 INFO [ROUND 19]
+2025-04-27 21:48:39,687 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:48,111 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:48:48,120 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:51,031 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:48:51,031 INFO 
+2025-04-27 21:48:51,031 INFO [ROUND 20]
+2025-04-27 21:48:51,031 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:48:59,055 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:48:59,063 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:01,874 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:49:01,874 INFO 
+2025-04-27 21:49:01,874 INFO [ROUND 21]
+2025-04-27 21:49:01,874 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:09,595 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:49:09,604 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:12,315 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:49:12,316 INFO 
+2025-04-27 21:49:12,316 INFO [ROUND 22]
+2025-04-27 21:49:12,316 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:20,039 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:49:20,048 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:22,958 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:49:22,959 INFO 
+2025-04-27 21:49:22,959 INFO [ROUND 23]
+2025-04-27 21:49:22,959 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:30,883 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:49:30,891 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:33,901 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:49:33,902 INFO 
+2025-04-27 21:49:33,902 INFO [ROUND 24]
+2025-04-27 21:49:33,902 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:42,523 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:49:42,532 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:45,245 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:49:45,246 INFO 
+2025-04-27 21:49:45,246 INFO [ROUND 25]
+2025-04-27 21:49:45,246 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:53,268 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:49:53,277 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:49:55,789 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:49:55,790 INFO 
+2025-04-27 21:49:55,790 INFO [ROUND 26]
+2025-04-27 21:49:55,790 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:03,712 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:50:03,722 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:06,334 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:50:06,334 INFO 
+2025-04-27 21:50:06,335 INFO [ROUND 27]
+2025-04-27 21:50:06,335 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:13,964 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:50:13,973 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:16,984 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:50:16,985 INFO 
+2025-04-27 21:50:16,985 INFO [ROUND 28]
+2025-04-27 21:50:16,985 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:24,709 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:50:24,717 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:27,928 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:50:27,928 INFO 
+2025-04-27 21:50:27,929 INFO [ROUND 29]
+2025-04-27 21:50:27,929 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:36,352 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:50:36,361 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:39,173 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:50:39,173 INFO 
+2025-04-27 21:50:39,173 INFO [ROUND 30]
+2025-04-27 21:50:39,173 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:46,999 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:50:47,008 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:49,821 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:50:49,821 INFO 
+2025-04-27 21:50:49,822 INFO [ROUND 31]
+2025-04-27 21:50:49,822 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:50:57,944 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:50:57,953 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:00,664 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:51:00,664 INFO 
+2025-04-27 21:51:00,664 INFO [ROUND 32]
+2025-04-27 21:51:00,664 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:08,789 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:51:08,798 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:11,713 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:51:11,714 INFO 
+2025-04-27 21:51:11,714 INFO [ROUND 33]
+2025-04-27 21:51:11,714 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:19,837 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:51:19,845 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:23,159 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:51:23,160 INFO 
+2025-04-27 21:51:23,160 INFO [ROUND 34]
+2025-04-27 21:51:23,160 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:31,483 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:51:31,491 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:34,304 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:51:34,304 INFO 
+2025-04-27 21:51:34,304 INFO [ROUND 35]
+2025-04-27 21:51:34,305 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:42,427 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:51:42,437 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:45,246 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:51:45,247 INFO 
+2025-04-27 21:51:45,247 INFO [ROUND 36]
+2025-04-27 21:51:45,247 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:53,470 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:51:53,480 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:51:56,390 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:51:56,391 INFO 
+2025-04-27 21:51:56,391 INFO [ROUND 37]
+2025-04-27 21:51:56,391 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:04,114 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:52:04,123 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:07,033 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:52:07,033 INFO 
+2025-04-27 21:52:07,033 INFO [ROUND 38]
+2025-04-27 21:52:07,033 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:14,555 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:52:14,564 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:17,475 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:52:17,476 INFO 
+2025-04-27 21:52:17,476 INFO [ROUND 39]
+2025-04-27 21:52:17,476 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:25,601 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:52:25,610 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:28,720 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:52:28,721 INFO 
+2025-04-27 21:52:28,721 INFO [ROUND 40]
+2025-04-27 21:52:28,721 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:36,644 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:52:36,653 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:39,864 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:52:39,865 INFO 
+2025-04-27 21:52:39,865 INFO [ROUND 41]
+2025-04-27 21:52:39,865 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:48,088 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:52:48,096 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:51,007 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:52:51,008 INFO 
+2025-04-27 21:52:51,008 INFO [ROUND 42]
+2025-04-27 21:52:51,008 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:52:59,129 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:52:59,138 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:02,058 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:53:02,059 INFO 
+2025-04-27 21:53:02,059 INFO [ROUND 43]
+2025-04-27 21:53:02,059 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:10,281 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:53:10,289 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:13,401 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:53:13,402 INFO 
+2025-04-27 21:53:13,402 INFO [ROUND 44]
+2025-04-27 21:53:13,402 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:21,524 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:53:21,534 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:24,444 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:53:24,444 INFO 
+2025-04-27 21:53:24,444 INFO [ROUND 45]
+2025-04-27 21:53:24,444 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:32,071 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:53:32,079 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:35,290 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:53:35,291 INFO 
+2025-04-27 21:53:35,291 INFO [ROUND 46]
+2025-04-27 21:53:35,291 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:43,116 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:53:43,125 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:46,134 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:53:46,134 INFO 
+2025-04-27 21:53:46,134 INFO [ROUND 47]
+2025-04-27 21:53:46,134 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:54,156 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:53:54,165 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:53:57,181 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:53:57,181 INFO 
+2025-04-27 21:53:57,182 INFO [ROUND 48]
+2025-04-27 21:53:57,182 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:54:05,205 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:54:05,213 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:54:08,223 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:54:08,223 INFO 
+2025-04-27 21:54:08,223 INFO [ROUND 49]
+2025-04-27 21:54:08,224 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:54:16,244 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:54:16,253 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:54:19,263 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:54:19,264 INFO 
+2025-04-27 21:54:19,264 INFO [ROUND 50]
+2025-04-27 21:54:19,264 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 21:54:26,984 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 21:54:26,995 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 21:54:30,206 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 21:54:30,206 INFO 
+2025-04-27 21:54:30,206 INFO [SUMMARY]
+2025-04-27 21:54:30,206 INFO Run finished 50 round(s) in 559.55s
+2025-04-27 21:54:30,212 INFO 	History (loss, distributed):
+2025-04-27 21:54:30,212 INFO 		round 1: 2.249397304738203
+2025-04-27 21:54:30,212 INFO 		round 2: 2.029065942315846
+2025-04-27 21:54:30,212 INFO 		round 3: 1.8904289421990375
+2025-04-27 21:54:30,212 INFO 		round 4: 1.7062655877917539
+2025-04-27 21:54:30,212 INFO 		round 5: 1.671993285137284
+2025-04-27 21:54:30,212 INFO 		round 6: 1.630679112990448
+2025-04-27 21:54:30,213 INFO 		round 7: 1.566347007841152
+2025-04-27 21:54:30,213 INFO 		round 8: 1.5599260464731055
+2025-04-27 21:54:30,213 INFO 		round 9: 1.548084408511936
+2025-04-27 21:54:30,213 INFO 		round 10: 1.5627679439921365
+2025-04-27 21:54:30,213 INFO 		round 11: 1.5267643543620095
+2025-04-27 21:54:30,213 INFO 		round 12: 1.5199630133410607
+2025-04-27 21:54:30,213 INFO 		round 13: 1.525660247264611
+2025-04-27 21:54:30,213 INFO 		round 14: 1.4830714509031242
+2025-04-27 21:54:30,213 INFO 		round 15: 1.480205823261536
+2025-04-27 21:54:30,213 INFO 		round 16: 1.4807771928258078
+2025-04-27 21:54:30,213 INFO 		round 17: 1.464441921830551
+2025-04-27 21:54:30,213 INFO 		round 18: 1.4595795355994126
+2025-04-27 21:54:30,213 INFO 		round 19: 1.4399823451116915
+2025-04-27 21:54:30,213 INFO 		round 20: 1.4640166516588027
+2025-04-27 21:54:30,213 INFO 		round 21: 1.4744537945451408
+2025-04-27 21:54:30,213 INFO 		round 22: 1.4617268400132468
+2025-04-27 21:54:30,214 INFO 		round 23: 1.4562804506490223
+2025-04-27 21:54:30,214 INFO 		round 24: 1.449754262418956
+2025-04-27 21:54:30,214 INFO 		round 25: 1.4751786400905598
+2025-04-27 21:54:30,214 INFO 		round 26: 1.4457710181657797
+2025-04-27 21:54:30,214 INFO 		round 27: 1.4710985147467228
+2025-04-27 21:54:30,214 INFO 		round 28: 1.4347350034967858
+2025-04-27 21:54:30,214 INFO 		round 29: 1.4258237350323357
+2025-04-27 21:54:30,214 INFO 		round 30: 1.442568048040695
+2025-04-27 21:54:30,214 INFO 		round 31: 1.4407393168132507
+2025-04-27 21:54:30,214 INFO 		round 32: 1.4432479886799396
+2025-04-27 21:54:30,214 INFO 		round 33: 1.438367504871751
+2025-04-27 21:54:30,214 INFO 		round 34: 1.4172665514168694
+2025-04-27 21:54:30,214 INFO 		round 35: 1.4745829363228011
+2025-04-27 21:54:30,214 INFO 		round 36: 1.4524389172796173
+2025-04-27 21:54:30,214 INFO 		round 37: 1.4132226120715605
+2025-04-27 21:54:30,215 INFO 		round 38: 1.515386724920482
+2025-04-27 21:54:30,215 INFO 		round 39: 1.5053997669474084
+2025-04-27 21:54:30,215 INFO 		round 40: 1.4506465886080153
+2025-04-27 21:54:30,215 INFO 		round 41: 1.4767525476348065
+2025-04-27 21:54:30,215 INFO 		round 42: 1.4897393511380521
+2025-04-27 21:54:30,215 INFO 		round 43: 1.4768779559942622
+2025-04-27 21:54:30,215 INFO 		round 44: 1.4663724107054708
+2025-04-27 21:54:30,215 INFO 		round 45: 1.4802963068492734
+2025-04-27 21:54:30,215 INFO 		round 46: 1.4694910030753634
+2025-04-27 21:54:30,215 INFO 		round 47: 1.4791275559921624
+2025-04-27 21:54:30,215 INFO 		round 48: 1.4677204254278942
+2025-04-27 21:54:30,215 INFO 		round 49: 1.5033557760678116
+2025-04-27 21:54:30,215 INFO 		round 50: 1.4774673082238081
+2025-04-27 21:54:30,215 INFO 	History (metrics, distributed, fit):
+2025-04-27 21:54:30,215 INFO 	{'accuracy': [(1, 0.4788708543566761),
+2025-04-27 21:54:30,216 INFO 	              (2, 0.5008458532484604),
+2025-04-27 21:54:30,216 INFO 	              (3, 0.5182737831767679),
+2025-04-27 21:54:30,216 INFO 	              (4, 0.5180596944758766),
+2025-04-27 21:54:30,216 INFO 	              (5, 0.55369292318542),
+2025-04-27 21:54:30,216 INFO 	              (6, 0.5508131236429236),
+2025-04-27 21:54:30,216 INFO 	              (7, 0.5482012951578852),
+2025-04-27 21:54:30,216 INFO 	              (8, 0.5763400718282964),
+2025-04-27 21:54:30,216 INFO 	              (9, 0.5706298284184539),
+2025-04-27 21:54:30,216 INFO 	              (10, 0.5527297217375674),
+2025-04-27 21:54:30,216 INFO 	              (11, 0.5672453969435974),
+2025-04-27 21:54:30,216 INFO 	              (12, 0.5806190961547456),
+2025-04-27 21:54:30,216 INFO 	              (13, 0.5873508580668242),
+2025-04-27 21:54:30,216 INFO 	              (14, 0.5740317446803541),
+2025-04-27 21:54:30,216 INFO 	              (15, 0.5634731272581159),
+2025-04-27 21:54:30,216 INFO 	              (16, 0.5710886426637147),
+2025-04-27 21:54:30,217 INFO 	              (17, 0.5777161148932726),
+2025-04-27 21:54:30,217 INFO 	              (18, 0.5902686149027434),
+2025-04-27 21:54:30,217 INFO 	              (19, 0.5619244568295694),
+2025-04-27 21:54:30,217 INFO 	              (20, 0.5979934988055918),
+2025-04-27 21:54:30,217 INFO 	              (21, 0.5593292957382665),
+2025-04-27 21:54:30,217 INFO 	              (22, 0.5745240113273976),
+2025-04-27 21:54:30,217 INFO 	              (23, 0.5789327834631425),
+2025-04-27 21:54:30,217 INFO 	              (24, 0.5734238281433787),
+2025-04-27 21:54:30,217 INFO 	              (25, 0.5595201919163525),
+2025-04-27 21:54:30,217 INFO 	              (26, 0.5680664627457377),
+2025-04-27 21:54:30,217 INFO 	              (27, 0.56484227060108),
+2025-04-27 21:54:30,217 INFO 	              (28, 0.57992492042903),
+2025-04-27 21:54:30,217 INFO 	              (29, 0.5729493936096324),
+2025-04-27 21:54:30,217 INFO 	              (30, 0.5793658848602434),
+2025-04-27 21:54:30,218 INFO 	              (31, 0.5798395746156247),
+2025-04-27 21:54:30,218 INFO 	              (32, 0.5794631670131691),
+2025-04-27 21:54:30,218 INFO 	              (33, 0.5760432264631339),
+2025-04-27 21:54:30,218 INFO 	              (34, 0.5611653791952539),
+2025-04-27 21:54:30,218 INFO 	              (35, 0.5810655211006474),
+2025-04-27 21:54:30,218 INFO 	              (36, 0.5826285461816181),
+2025-04-27 21:54:30,218 INFO 	              (37, 0.5923593160400368),
+2025-04-27 21:54:30,218 INFO 	              (38, 0.5668252857811781),
+2025-04-27 21:54:30,218 INFO 	              (39, 0.5749578135170834),
+2025-04-27 21:54:30,218 INFO 	              (40, 0.5918540617427679),
+2025-04-27 21:54:30,218 INFO 	              (41, 0.570613009678644),
+2025-04-27 21:54:30,218 INFO 	              (42, 0.5661309620681486),
+2025-04-27 21:54:30,218 INFO 	              (43, 0.564583786995378),
+2025-04-27 21:54:30,218 INFO 	              (44, 0.5741201545569463),
+2025-04-27 21:54:30,219 INFO 	              (45, 0.5610286508437851),
+2025-04-27 21:54:30,219 INFO 	              (46, 0.5834567386855933),
+2025-04-27 21:54:30,219 INFO 	              (47, 0.5688528685450269),
+2025-04-27 21:54:30,219 INFO 	              (48, 0.5719095833213313),
+2025-04-27 21:54:30,219 INFO 	              (49, 0.567268975581132),
+2025-04-27 21:54:30,219 INFO 	              (50, 0.5730366312380215)],
+2025-04-27 21:54:30,219 INFO 	 'f1_score': [(1, 0.15270698671435634),
+2025-04-27 21:54:30,219 INFO 	              (2, 0.19509975410196348),
+2025-04-27 21:54:30,219 INFO 	              (3, 0.21446112494649544),
+2025-04-27 21:54:30,219 INFO 	              (4, 0.2218504514497806),
+2025-04-27 21:54:30,219 INFO 	              (5, 0.2527009634727503),
+2025-04-27 21:54:30,219 INFO 	              (6, 0.25786571673249015),
+2025-04-27 21:54:30,219 INFO 	              (7, 0.26679256315513583),
+2025-04-27 21:54:30,220 INFO 	              (8, 0.29333074421687805),
+2025-04-27 21:54:30,220 INFO 	              (9, 0.2864444028089001),
+2025-04-27 21:54:30,220 INFO 	              (10, 0.26462202274647023),
+2025-04-27 21:54:30,220 INFO 	              (11, 0.28232847278317985),
+2025-04-27 21:54:30,220 INFO 	              (12, 0.3127337488357304),
+2025-04-27 21:54:30,220 INFO 	              (13, 0.3060968547592484),
+2025-04-27 21:54:30,220 INFO 	              (14, 0.2887763293611645),
+2025-04-27 21:54:30,220 INFO 	              (15, 0.30079899169324725),
+2025-04-27 21:54:30,220 INFO 	              (16, 0.28962971436216134),
+2025-04-27 21:54:30,220 INFO 	              (17, 0.31316496848287245),
+2025-04-27 21:54:30,220 INFO 	              (18, 0.30290709429113755),
+2025-04-27 21:54:30,220 INFO 	              (19, 0.2979404938688005),
+2025-04-27 21:54:30,220 INFO 	              (20, 0.3188058514757499),
+2025-04-27 21:54:30,221 INFO 	              (21, 0.29473832991635585),
+2025-04-27 21:54:30,221 INFO 	              (22, 0.3113043981187172),
+2025-04-27 21:54:30,221 INFO 	              (23, 0.312067914364744),
+2025-04-27 21:54:30,221 INFO 	              (24, 0.30685456106885756),
+2025-04-27 21:54:30,221 INFO 	              (25, 0.3079579209119633),
+2025-04-27 21:54:30,221 INFO 	              (26, 0.3009994089208269),
+2025-04-27 21:54:30,221 INFO 	              (27, 0.289446683248148),
+2025-04-27 21:54:30,221 INFO 	              (28, 0.3191461897802313),
+2025-04-27 21:54:30,221 INFO 	              (29, 0.33487759567910935),
+2025-04-27 21:54:30,221 INFO 	              (30, 0.3194880531283813),
+2025-04-27 21:54:30,221 INFO 	              (31, 0.31626005322393813),
+2025-04-27 21:54:30,221 INFO 	              (32, 0.32966389105968785),
+2025-04-27 21:54:30,221 INFO 	              (33, 0.3162257999778199),
+2025-04-27 21:54:30,221 INFO 	              (34, 0.31559712420159974),
+2025-04-27 21:54:30,221 INFO 	              (35, 0.3004241410409133),
+2025-04-27 21:54:30,222 INFO 	              (36, 0.3140563145298368),
+2025-04-27 21:54:30,222 INFO 	              (37, 0.33145181262849216),
+2025-04-27 21:54:30,222 INFO 	              (38, 0.2975844538421093),
+2025-04-27 21:54:30,222 INFO 	              (39, 0.3068142331571679),
+2025-04-27 21:54:30,222 INFO 	              (40, 0.31507402097191567),
+2025-04-27 21:54:30,222 INFO 	              (41, 0.3068070334326922),
+2025-04-27 21:54:30,222 INFO 	              (42, 0.3065001568861291),
+2025-04-27 21:54:30,222 INFO 	              (43, 0.3074730202410004),
+2025-04-27 21:54:30,222 INFO 	              (44, 0.32347066284598236),
+2025-04-27 21:54:30,222 INFO 	              (45, 0.2948234756333697),
+2025-04-27 21:54:30,222 INFO 	              (46, 0.33094765695834194),
+2025-04-27 21:54:30,222 INFO 	              (47, 0.3015355986414618),
+2025-04-27 21:54:30,222 INFO 	              (48, 0.32064215710508726),
+2025-04-27 21:54:30,222 INFO 	              (49, 0.3042416104391073),
+2025-04-27 21:54:30,222 INFO 	              (50, 0.31357504710696904)],
+2025-04-27 21:54:30,222 INFO 	 'loss': [(1, 1.5445171740045527),
+2025-04-27 21:54:30,223 INFO 	          (2, 1.4323983704548124),
+2025-04-27 21:54:30,223 INFO 	          (3, 1.4534452527663044),
+2025-04-27 21:54:30,223 INFO 	          (4, 1.3819523279002404),
+2025-04-27 21:54:30,223 INFO 	          (5, 1.2804647964222782),
+2025-04-27 21:54:30,223 INFO 	          (6, 1.2760103658007638),
+2025-04-27 21:54:30,223 INFO 	          (7, 1.2838159665530042),
+2025-04-27 21:54:30,223 INFO 	          (8, 1.2064514624879241),
+2025-04-27 21:54:30,223 INFO 	          (9, 1.223125029337059),
+2025-04-27 21:54:30,223 INFO 	          (10, 1.331674983728917),
+2025-04-27 21:54:30,223 INFO 	          (11, 1.2400795381884095),
+2025-04-27 21:54:30,223 INFO 	          (12, 1.2466441850797767),
+2025-04-27 21:54:30,223 INFO 	          (13, 1.2009640287565038),
+2025-04-27 21:54:30,223 INFO 	          (14, 1.3703484889074937),
+2025-04-27 21:54:30,223 INFO 	          (15, 1.3189274294906355),
+2025-04-27 21:54:30,223 INFO 	          (16, 1.2252932471384395),
+2025-04-27 21:54:30,224 INFO 	          (17, 1.228307246168249),
+2025-04-27 21:54:30,224 INFO 	          (18, 1.2227611790122943),
+2025-04-27 21:54:30,224 INFO 	          (19, 1.3047771755297615),
+2025-04-27 21:54:30,224 INFO 	          (20, 1.2319440627614575),
+2025-04-27 21:54:30,224 INFO 	          (21, 1.300413586257269),
+2025-04-27 21:54:30,224 INFO 	          (22, 1.2467019658625518),
+2025-04-27 21:54:30,224 INFO 	          (23, 1.2495690948262523),
+2025-04-27 21:54:30,224 INFO 	          (24, 1.26020627962283),
+2025-04-27 21:54:30,224 INFO 	          (25, 1.2866774499650222),
+2025-04-27 21:54:30,224 INFO 	          (26, 1.259198433444819),
+2025-04-27 21:54:30,224 INFO 	          (27, 1.2915141840875861),
+2025-04-27 21:54:30,224 INFO 	          (28, 1.291983071704627),
+2025-04-27 21:54:30,224 INFO 	          (29, 1.2369687389908983),
+2025-04-27 21:54:30,224 INFO 	          (30, 1.275042827112448),
+2025-04-27 21:54:30,224 INFO 	          (31, 1.3053744462881047),
+2025-04-27 21:54:30,224 INFO 	          (32, 1.2950454771115716),
+2025-04-27 21:54:30,225 INFO 	          (33, 1.2745020389807842),
+2025-04-27 21:54:30,225 INFO 	          (34, 1.3200717779736755),
+2025-04-27 21:54:30,225 INFO 	          (35, 1.3034439545433076),
+2025-04-27 21:54:30,225 INFO 	          (36, 1.284121388874492),
+2025-04-27 21:54:30,225 INFO 	          (37, 1.2566650630338305),
+2025-04-27 21:54:30,225 INFO 	          (38, 1.2841713824479701),
+2025-04-27 21:54:30,225 INFO 	          (39, 1.2444268441417399),
+2025-04-27 21:54:30,225 INFO 	          (40, 1.240486998660754),
+2025-04-27 21:54:30,225 INFO 	          (41, 1.3190454431943035),
+2025-04-27 21:54:30,225 INFO 	          (42, 1.3175461564689201),
+2025-04-27 21:54:30,225 INFO 	          (43, 1.3571816168640158),
+2025-04-27 21:54:30,225 INFO 	          (44, 1.299689864482816),
+2025-04-27 21:54:30,225 INFO 	          (45, 1.343934920962774),
+2025-04-27 21:54:30,225 INFO 	          (46, 1.2869656344070732),
+2025-04-27 21:54:30,225 INFO 	          (47, 1.345138305137641),
+2025-04-27 21:54:30,225 INFO 	          (48, 1.333131479130973),
+2025-04-27 21:54:30,226 INFO 	          (49, 1.3549003738446268),
+2025-04-27 21:54:30,226 INFO 	          (50, 1.316962168283491)],
+2025-04-27 21:54:30,226 INFO 	 'num_clients': [(1, 10),
+2025-04-27 21:54:30,226 INFO 	                 (2, 10),
+2025-04-27 21:54:30,226 INFO 	                 (3, 10),
+2025-04-27 21:54:30,226 INFO 	                 (4, 10),
+2025-04-27 21:54:30,226 INFO 	                 (5, 10),
+2025-04-27 21:54:30,226 INFO 	                 (6, 10),
+2025-04-27 21:54:30,226 INFO 	                 (7, 10),
+2025-04-27 21:54:30,226 INFO 	                 (8, 10),
+2025-04-27 21:54:30,226 INFO 	                 (9, 10),
+2025-04-27 21:54:30,226 INFO 	                 (10, 10),
+2025-04-27 21:54:30,226 INFO 	                 (11, 10),
+2025-04-27 21:54:30,226 INFO 	                 (12, 10),
+2025-04-27 21:54:30,226 INFO 	                 (13, 10),
+2025-04-27 21:54:30,227 INFO 	                 (14, 10),
+2025-04-27 21:54:30,227 INFO 	                 (15, 10),
+2025-04-27 21:54:30,227 INFO 	                 (16, 10),
+2025-04-27 21:54:30,227 INFO 	                 (17, 10),
+2025-04-27 21:54:30,227 INFO 	                 (18, 10),
+2025-04-27 21:54:30,227 INFO 	                 (19, 10),
+2025-04-27 21:54:30,227 INFO 	                 (20, 10),
+2025-04-27 21:54:30,227 INFO 	                 (21, 10),
+2025-04-27 21:54:30,227 INFO 	                 (22, 10),
+2025-04-27 21:54:30,227 INFO 	                 (23, 10),
+2025-04-27 21:54:30,227 INFO 	                 (24, 10),
+2025-04-27 21:54:30,228 INFO 	                 (25, 10),
+2025-04-27 21:54:30,228 INFO 	                 (26, 10),
+2025-04-27 21:54:30,228 INFO 	                 (27, 10),
+2025-04-27 21:54:30,228 INFO 	                 (28, 10),
+2025-04-27 21:54:30,228 INFO 	                 (29, 10),
+2025-04-27 21:54:30,228 INFO 	                 (30, 10),
+2025-04-27 21:54:30,228 INFO 	                 (31, 10),
+2025-04-27 21:54:30,228 INFO 	                 (32, 10),
+2025-04-27 21:54:30,228 INFO 	                 (33, 10),
+2025-04-27 21:54:30,228 INFO 	                 (34, 10),
+2025-04-27 21:54:30,228 INFO 	                 (35, 10),
+2025-04-27 21:54:30,228 INFO 	                 (36, 10),
+2025-04-27 21:54:30,228 INFO 	                 (37, 10),
+2025-04-27 21:54:30,229 INFO 	                 (38, 10),
+2025-04-27 21:54:30,229 INFO 	                 (39, 10),
+2025-04-27 21:54:30,229 INFO 	                 (40, 10),
+2025-04-27 21:54:30,229 INFO 	                 (41, 10),
+2025-04-27 21:54:30,229 INFO 	                 (42, 10),
+2025-04-27 21:54:30,229 INFO 	                 (43, 10),
+2025-04-27 21:54:30,229 INFO 	                 (44, 10),
+2025-04-27 21:54:30,230 INFO 	                 (45, 10),
+2025-04-27 21:54:30,230 INFO 	                 (46, 10),
+2025-04-27 21:54:30,230 INFO 	                 (47, 10),
+2025-04-27 21:54:30,230 INFO 	                 (48, 10),
+2025-04-27 21:54:30,230 INFO 	                 (49, 10),
+2025-04-27 21:54:30,230 INFO 	                 (50, 10)],
+2025-04-27 21:54:30,230 INFO 	 'precision': [(1, 0.17168774554927677),
+2025-04-27 21:54:30,230 INFO 	               (2, 0.24067939251499043),
+2025-04-27 21:54:30,230 INFO 	               (3, 0.25940629718409997),
+2025-04-27 21:54:30,230 INFO 	               (4, 0.2992916332510254),
+2025-04-27 21:54:30,230 INFO 	               (5, 0.30313970616730573),
+2025-04-27 21:54:30,230 INFO 	               (6, 0.34266658128345406),
+2025-04-27 21:54:30,230 INFO 	               (7, 0.35034089120290185),
+2025-04-27 21:54:30,230 INFO 	               (8, 0.35357726916889953),
+2025-04-27 21:54:30,230 INFO 	               (9, 0.34777058315981707),
+2025-04-27 21:54:30,231 INFO 	               (10, 0.3263998910532926),
+2025-04-27 21:54:30,231 INFO 	               (11, 0.3516968140208079),
+2025-04-27 21:54:30,231 INFO 	               (12, 0.3881264499117915),
+2025-04-27 21:54:30,231 INFO 	               (13, 0.3806890580081084),
+2025-04-27 21:54:30,231 INFO 	               (14, 0.34104108003266115),
+2025-04-27 21:54:30,231 INFO 	               (15, 0.3466764316734381),
+2025-04-27 21:54:30,231 INFO 	               (16, 0.34155558117319557),
+2025-04-27 21:54:30,231 INFO 	               (17, 0.3737819131911167),
+2025-04-27 21:54:30,231 INFO 	               (18, 0.35182600734707525),
+2025-04-27 21:54:30,231 INFO 	               (19, 0.3662658862907548),
+2025-04-27 21:54:30,231 INFO 	               (20, 0.37342126157103506),
+2025-04-27 21:54:30,231 INFO 	               (21, 0.36566029523221577),
+2025-04-27 21:54:30,231 INFO 	               (22, 0.4185621164337043),
+2025-04-27 21:54:30,231 INFO 	               (23, 0.3567238221583695),
+2025-04-27 21:54:30,231 INFO 	               (24, 0.3602847758897813),
+2025-04-27 21:54:30,231 INFO 	               (25, 0.37547777768132096),
+2025-04-27 21:54:30,232 INFO 	               (26, 0.35654690687409846),
+2025-04-27 21:54:30,232 INFO 	               (27, 0.33946213282387383),
+2025-04-27 21:54:30,232 INFO 	               (28, 0.39539892950864686),
+2025-04-27 21:54:30,232 INFO 	               (29, 0.3922283986351814),
+2025-04-27 21:54:30,232 INFO 	               (30, 0.38208462198557686),
+2025-04-27 21:54:30,232 INFO 	               (31, 0.4012822657992162),
+2025-04-27 21:54:30,232 INFO 	               (32, 0.4079928539423238),
+2025-04-27 21:54:30,232 INFO 	               (33, 0.3891415688969015),
+2025-04-27 21:54:30,232 INFO 	               (34, 0.37332053944084365),
+2025-04-27 21:54:30,232 INFO 	               (35, 0.350486597044721),
+2025-04-27 21:54:30,232 INFO 	               (36, 0.36672911109650347),
+2025-04-27 21:54:30,232 INFO 	               (37, 0.3971908743869064),
+2025-04-27 21:54:30,232 INFO 	               (38, 0.36281156008135845),
+2025-04-27 21:54:30,232 INFO 	               (39, 0.36713829235125156),
+2025-04-27 21:54:30,232 INFO 	               (40, 0.3738983320801097),
+2025-04-27 21:54:30,233 INFO 	               (41, 0.3668989691488971),
+2025-04-27 21:54:30,233 INFO 	               (42, 0.3824336823619041),
+2025-04-27 21:54:30,233 INFO 	               (43, 0.37338773054023827),
+2025-04-27 21:54:30,233 INFO 	               (44, 0.3870058609553801),
+2025-04-27 21:54:30,233 INFO 	               (45, 0.3958450243122608),
+2025-04-27 21:54:30,233 INFO 	               (46, 0.3865508067304504),
+2025-04-27 21:54:30,233 INFO 	               (47, 0.3448006992278582),
+2025-04-27 21:54:30,233 INFO 	               (48, 0.3882713085537173),
+2025-04-27 21:54:30,233 INFO 	               (49, 0.35077112615436207),
+2025-04-27 21:54:30,233 INFO 	               (50, 0.39177472655458756)],
+2025-04-27 21:54:30,233 INFO 	 'recall': [(1, 0.1855527787591156),
+2025-04-27 21:54:30,233 INFO 	            (2, 0.21635401082452638),
+2025-04-27 21:54:30,233 INFO 	            (3, 0.23574116749135818),
+2025-04-27 21:54:30,233 INFO 	            (4, 0.2498600681301971),
+2025-04-27 21:54:30,233 INFO 	            (5, 0.2685771175077275),
+2025-04-27 21:54:30,233 INFO 	            (6, 0.2664723303413923),
+2025-04-27 21:54:30,234 INFO 	            (7, 0.2756052359920707),
+2025-04-27 21:54:30,234 INFO 	            (8, 0.30135015179572544),
+2025-04-27 21:54:30,234 INFO 	            (9, 0.289230156426685),
+2025-04-27 21:54:30,234 INFO 	            (10, 0.28139204736551493),
+2025-04-27 21:54:30,234 INFO 	            (11, 0.2876196852410741),
+2025-04-27 21:54:30,234 INFO 	            (12, 0.3186320829337445),
+2025-04-27 21:54:30,234 INFO 	            (13, 0.30622101357699166),
+2025-04-27 21:54:30,234 INFO 	            (14, 0.28887798214636856),
+2025-04-27 21:54:30,234 INFO 	            (15, 0.31156545175977357),
+2025-04-27 21:54:30,234 INFO 	            (16, 0.30262562787067515),
+2025-04-27 21:54:30,234 INFO 	            (17, 0.3143956710676456),
+2025-04-27 21:54:30,234 INFO 	            (18, 0.31303958330225784),
+2025-04-27 21:54:30,234 INFO 	            (19, 0.3079717641053267),
+2025-04-27 21:54:30,234 INFO 	            (20, 0.3188483543295555),
+2025-04-27 21:54:30,234 INFO 	            (21, 0.3048040752436059),
+2025-04-27 21:54:30,235 INFO 	            (22, 0.3106935921529228),
+2025-04-27 21:54:30,235 INFO 	            (23, 0.3163156362759383),
+2025-04-27 21:54:30,235 INFO 	            (24, 0.3083416398593664),
+2025-04-27 21:54:30,235 INFO 	            (25, 0.31693385363816795),
+2025-04-27 21:54:30,235 INFO 	            (26, 0.3021143141108525),
+2025-04-27 21:54:30,235 INFO 	            (27, 0.29791926889049775),
+2025-04-27 21:54:30,235 INFO 	            (28, 0.31916189661995564),
+2025-04-27 21:54:30,235 INFO 	            (29, 0.333177051978148),
+2025-04-27 21:54:30,235 INFO 	            (30, 0.3174228752356133),
+2025-04-27 21:54:30,235 INFO 	            (31, 0.31526538543355836),
+2025-04-27 21:54:30,235 INFO 	            (32, 0.3321027596379414),
+2025-04-27 21:54:30,235 INFO 	            (33, 0.3153253901622063),
+2025-04-27 21:54:30,235 INFO 	            (34, 0.3138709189124733),
+2025-04-27 21:54:30,235 INFO 	            (35, 0.30038909108434425),
+2025-04-27 21:54:30,235 INFO 	            (36, 0.31784956816429955),
+2025-04-27 21:54:30,235 INFO 	            (37, 0.33081174180693823),
+2025-04-27 21:54:30,236 INFO 	            (38, 0.2948771640625639),
+2025-04-27 21:54:30,236 INFO 	            (39, 0.3055366917706287),
+2025-04-27 21:54:30,236 INFO 	            (40, 0.3156968808872222),
+2025-04-27 21:54:30,236 INFO 	            (41, 0.313805601885197),
+2025-04-27 21:54:30,236 INFO 	            (42, 0.30508315078908294),
+2025-04-27 21:54:30,236 INFO 	            (43, 0.3059428609581048),
+2025-04-27 21:54:30,236 INFO 	            (44, 0.32001703771653167),
+2025-04-27 21:54:30,236 INFO 	            (45, 0.294595828837257),
+2025-04-27 21:54:30,236 INFO 	            (46, 0.32730778581085673),
+2025-04-27 21:54:30,236 INFO 	            (47, 0.30472398616442103),
+2025-04-27 21:54:30,236 INFO 	            (48, 0.3116078115862518),
+2025-04-27 21:54:30,236 INFO 	            (49, 0.30439360245435093),
+2025-04-27 21:54:30,236 INFO 	            (50, 0.3100674363351474)],
+2025-04-27 21:54:30,236 INFO 	 'total_examples': [(1, 1255),
+2025-04-27 21:54:30,236 INFO 	                    (2, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (3, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (4, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (5, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (6, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (7, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (8, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (9, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (10, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (11, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (12, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (13, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (14, 1255),
+2025-04-27 21:54:30,237 INFO 	                    (15, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (16, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (17, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (18, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (19, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (20, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (21, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (22, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (23, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (24, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (25, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (26, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (27, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (28, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (29, 1255),
+2025-04-27 21:54:30,238 INFO 	                    (30, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (31, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (32, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (33, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (34, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (35, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (36, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (37, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (38, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (39, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (40, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (41, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (42, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (43, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (44, 1255),
+2025-04-27 21:54:30,239 INFO 	                    (45, 1255),
+2025-04-27 21:54:30,240 INFO 	                    (46, 1255),
+2025-04-27 21:54:30,240 INFO 	                    (47, 1255),
+2025-04-27 21:54:30,240 INFO 	                    (48, 1255),
+2025-04-27 21:54:30,240 INFO 	                    (49, 1255),
+2025-04-27 21:54:30,240 INFO 	                    (50, 1255)]}
+2025-04-27 21:54:30,240 INFO 	History (metrics, distributed, evaluate):
+2025-04-27 21:54:30,240 INFO 	{'accuracy': [(1, 0.13165319942042686),
+2025-04-27 21:54:30,240 INFO 	              (2, 0.21009953211233512),
+2025-04-27 21:54:30,240 INFO 	              (3, 0.307667042435376),
+2025-04-27 21:54:30,240 INFO 	              (4, 0.37943473127135124),
+2025-04-27 21:54:30,240 INFO 	              (5, 0.3849914194669967),
+2025-04-27 21:54:30,240 INFO 	              (6, 0.4139921354601164),
+2025-04-27 21:54:30,240 INFO 	              (7, 0.43989601040819815),
+2025-04-27 21:54:30,240 INFO 	              (8, 0.4435551129741196),
+2025-04-27 21:54:30,240 INFO 	              (9, 0.45859160617951694),
+2025-04-27 21:54:30,241 INFO 	              (10, 0.4582265878759726),
+2025-04-27 21:54:30,241 INFO 	              (11, 0.47048403944143574),
+2025-04-27 21:54:30,241 INFO 	              (12, 0.4598797176902156),
+2025-04-27 21:54:30,241 INFO 	              (13, 0.46021278093203183),
+2025-04-27 21:54:30,241 INFO 	              (14, 0.4694005444321934),
+2025-04-27 21:54:30,241 INFO 	              (15, 0.48314837028459845),
+2025-04-27 21:54:30,241 INFO 	              (16, 0.4860922811258948),
+2025-04-27 21:54:30,241 INFO 	              (17, 0.48605303658504806),
+2025-04-27 21:54:30,241 INFO 	              (18, 0.497204933494754),
+2025-04-27 21:54:30,241 INFO 	              (19, 0.501371737491842),
+2025-04-27 21:54:30,241 INFO 	              (20, 0.48995280988084844),
+2025-04-27 21:54:30,241 INFO 	              (21, 0.4951401674554667),
+2025-04-27 21:54:30,241 INFO 	              (22, 0.5003710171155794),
+2025-04-27 21:54:30,241 INFO 	              (23, 0.5027834579831149),
+2025-04-27 21:54:30,241 INFO 	              (24, 0.504821649184925),
+2025-04-27 21:54:30,242 INFO 	              (25, 0.4981702703391231),
+2025-04-27 21:54:30,242 INFO 	              (26, 0.5053236012569029),
+2025-04-27 21:54:30,242 INFO 	              (27, 0.49530739343533503),
+2025-04-27 21:54:30,242 INFO 	              (28, 0.5085875694469266),
+2025-04-27 21:54:30,242 INFO 	              (29, 0.5134636207462131),
+2025-04-27 21:54:30,242 INFO 	              (30, 0.4992155190116848),
+2025-04-27 21:54:30,242 INFO 	              (31, 0.5107177246022684),
+2025-04-27 21:54:30,242 INFO 	              (32, 0.5005971350041436),
+2025-04-27 21:54:30,242 INFO 	              (33, 0.5035042785801999),
+2025-04-27 21:54:30,242 INFO 	              (34, 0.5011263472838874),
+2025-04-27 21:54:30,242 INFO 	              (35, 0.49941578515740326),
+2025-04-27 21:54:30,242 INFO 	              (36, 0.5110800244309562),
+2025-04-27 21:54:30,242 INFO 	              (37, 0.5203718708759506),
+2025-04-27 21:54:30,242 INFO 	              (38, 0.48761775786264255),
+2025-04-27 21:54:30,242 INFO 	              (39, 0.47951525303968967),
+2025-04-27 21:54:30,243 INFO 	              (40, 0.5105528952326848),
+2025-04-27 21:54:30,243 INFO 	              (41, 0.5039789886532002),
+2025-04-27 21:54:30,243 INFO 	              (42, 0.49041279876124344),
+2025-04-27 21:54:30,243 INFO 	              (43, 0.4948168319451445),
+2025-04-27 21:54:30,243 INFO 	              (44, 0.5006403374448584),
+2025-04-27 21:54:30,243 INFO 	              (45, 0.5083706100855381),
+2025-04-27 21:54:30,243 INFO 	              (46, 0.4981698074149034),
+2025-04-27 21:54:30,243 INFO 	              (47, 0.5070843441370383),
+2025-04-27 21:54:30,243 INFO 	              (48, 0.5062889943146046),
+2025-04-27 21:54:30,243 INFO 	              (49, 0.49946409073136305),
+2025-04-27 21:54:30,243 INFO 	              (50, 0.4888700751096072)],
+2025-04-27 21:54:30,243 INFO 	 'f1_score': [(1, 0.05424789810301491),
+2025-04-27 21:54:30,243 INFO 	              (2, 0.1334612014800508),
+2025-04-27 21:54:30,243 INFO 	              (3, 0.21440793363921892),
+2025-04-27 21:54:30,243 INFO 	              (4, 0.2677084918507734),
+2025-04-27 21:54:30,243 INFO 	              (5, 0.2739433623069948),
+2025-04-27 21:54:30,244 INFO 	              (6, 0.29894474833725626),
+2025-04-27 21:54:30,244 INFO 	              (7, 0.3332243103686972),
+2025-04-27 21:54:30,244 INFO 	              (8, 0.327467421346388),
+2025-04-27 21:54:30,244 INFO 	              (9, 0.34201948520207465),
+2025-04-27 21:54:30,244 INFO 	              (10, 0.34787961475920515),
+2025-04-27 21:54:30,244 INFO 	              (11, 0.3557106799351778),
+2025-04-27 21:54:30,244 INFO 	              (12, 0.34701809298109026),
+2025-04-27 21:54:30,244 INFO 	              (13, 0.35144500049886074),
+2025-04-27 21:54:30,244 INFO 	              (14, 0.35637517325929763),
+2025-04-27 21:54:30,244 INFO 	              (15, 0.35886932895807855),
+2025-04-27 21:54:30,244 INFO 	              (16, 0.3605437675676801),
+2025-04-27 21:54:30,244 INFO 	              (17, 0.3664513506862103),
+2025-04-27 21:54:30,244 INFO 	              (18, 0.374941181294017),
+2025-04-27 21:54:30,244 INFO 	              (19, 0.37255730140752147),
+2025-04-27 21:54:30,244 INFO 	              (20, 0.3771088261796362),
+2025-04-27 21:54:30,245 INFO 	              (21, 0.36930332595881),
+2025-04-27 21:54:30,245 INFO 	              (22, 0.3718188582154925),
+2025-04-27 21:54:30,245 INFO 	              (23, 0.3794340870318568),
+2025-04-27 21:54:30,245 INFO 	              (24, 0.3830755336018934),
+2025-04-27 21:54:30,245 INFO 	              (25, 0.37379323072822757),
+2025-04-27 21:54:30,245 INFO 	              (26, 0.3830759768986754),
+2025-04-27 21:54:30,245 INFO 	              (27, 0.38078316546998997),
+2025-04-27 21:54:30,245 INFO 	              (28, 0.3809532212540302),
+2025-04-27 21:54:30,245 INFO 	              (29, 0.38848151073486686),
+2025-04-27 21:54:30,245 INFO 	              (30, 0.3825575110982177),
+2025-04-27 21:54:30,245 INFO 	              (31, 0.3890887402029913),
+2025-04-27 21:54:30,245 INFO 	              (32, 0.3801114656517518),
+2025-04-27 21:54:30,245 INFO 	              (33, 0.38029256282280793),
+2025-04-27 21:54:30,245 INFO 	              (34, 0.3811071934149234),
+2025-04-27 21:54:30,245 INFO 	              (35, 0.38099572571555423),
+2025-04-27 21:54:30,245 INFO 	              (36, 0.39232349675061623),
+2025-04-27 21:54:30,246 INFO 	              (37, 0.3976576838975308),
+2025-04-27 21:54:30,246 INFO 	              (38, 0.36577197611299445),
+2025-04-27 21:54:30,246 INFO 	              (39, 0.3726762796395065),
+2025-04-27 21:54:30,246 INFO 	              (40, 0.39018509176288535),
+2025-04-27 21:54:30,246 INFO 	              (41, 0.38566979433817605),
+2025-04-27 21:54:30,246 INFO 	              (42, 0.3709556868343747),
+2025-04-27 21:54:30,246 INFO 	              (43, 0.37670151531466206),
+2025-04-27 21:54:30,246 INFO 	              (44, 0.3844184834725626),
+2025-04-27 21:54:30,246 INFO 	              (45, 0.3898508463211577),
+2025-04-27 21:54:30,246 INFO 	              (46, 0.3784893125667404),
+2025-04-27 21:54:30,246 INFO 	              (47, 0.38208487314669015),
+2025-04-27 21:54:30,246 INFO 	              (48, 0.3796183772330676),
+2025-04-27 21:54:30,246 INFO 	              (49, 0.38037755818639357),
+2025-04-27 21:54:30,246 INFO 	              (50, 0.3710759796997806)],
+2025-04-27 21:54:30,247 INFO 	 'loss': [(1, 2.249397304738203),
+2025-04-27 21:54:30,247 INFO 	          (2, 2.029065942315846),
+2025-04-27 21:54:30,247 INFO 	          (3, 1.8904289421990375),
+2025-04-27 21:54:30,247 INFO 	          (4, 1.7062655877917539),
+2025-04-27 21:54:30,247 INFO 	          (5, 1.671993285137284),
+2025-04-27 21:54:30,247 INFO 	          (6, 1.630679112990448),
+2025-04-27 21:54:30,247 INFO 	          (7, 1.566347007841152),
+2025-04-27 21:54:30,247 INFO 	          (8, 1.5599260464731055),
+2025-04-27 21:54:30,247 INFO 	          (9, 1.548084408511936),
+2025-04-27 21:54:30,247 INFO 	          (10, 1.5627679439921365),
+2025-04-27 21:54:30,247 INFO 	          (11, 1.5267643543620095),
+2025-04-27 21:54:30,247 INFO 	          (12, 1.5199630133410607),
+2025-04-27 21:54:30,247 INFO 	          (13, 1.525660247264611),
+2025-04-27 21:54:30,247 INFO 	          (14, 1.4830714509031242),
+2025-04-27 21:54:30,248 INFO 	          (15, 1.480205823261536),
+2025-04-27 21:54:30,248 INFO 	          (16, 1.4807771928258078),
+2025-04-27 21:54:30,248 INFO 	          (17, 1.464441921830551),
+2025-04-27 21:54:30,248 INFO 	          (18, 1.4595795355994126),
+2025-04-27 21:54:30,248 INFO 	          (19, 1.4399823451116915),
+2025-04-27 21:54:30,248 INFO 	          (20, 1.4640166516588027),
+2025-04-27 21:54:30,248 INFO 	          (21, 1.4744537945451408),
+2025-04-27 21:54:30,248 INFO 	          (22, 1.4617268400132468),
+2025-04-27 21:54:30,248 INFO 	          (23, 1.4562804506490223),
+2025-04-27 21:54:30,248 INFO 	          (24, 1.449754262418956),
+2025-04-27 21:54:30,248 INFO 	          (25, 1.4751786400905598),
+2025-04-27 21:54:30,248 INFO 	          (26, 1.4457710181657797),
+2025-04-27 21:54:30,248 INFO 	          (27, 1.4710985147467228),
+2025-04-27 21:54:30,248 INFO 	          (28, 1.4347350034967858),
+2025-04-27 21:54:30,248 INFO 	          (29, 1.4258237350323357),
+2025-04-27 21:54:30,249 INFO 	          (30, 1.442568048040695),
+2025-04-27 21:54:30,249 INFO 	          (31, 1.4407393168132507),
+2025-04-27 21:54:30,249 INFO 	          (32, 1.4432479886799396),
+2025-04-27 21:54:30,249 INFO 	          (33, 1.438367504871751),
+2025-04-27 21:54:30,249 INFO 	          (34, 1.4172665514168694),
+2025-04-27 21:54:30,249 INFO 	          (35, 1.4745829363228011),
+2025-04-27 21:54:30,249 INFO 	          (36, 1.4524389172796173),
+2025-04-27 21:54:30,249 INFO 	          (37, 1.4132226120715605),
+2025-04-27 21:54:30,249 INFO 	          (38, 1.515386724920482),
+2025-04-27 21:54:30,249 INFO 	          (39, 1.5053997669474084),
+2025-04-27 21:54:30,249 INFO 	          (40, 1.4506465886080153),
+2025-04-27 21:54:30,249 INFO 	          (41, 1.4767525476348065),
+2025-04-27 21:54:30,249 INFO 	          (42, 1.4897393511380521),
+2025-04-27 21:54:30,249 INFO 	          (43, 1.4768779559942622),
+2025-04-27 21:54:30,249 INFO 	          (44, 1.4663724107054708),
+2025-04-27 21:54:30,250 INFO 	          (45, 1.4802963068492734),
+2025-04-27 21:54:30,250 INFO 	          (46, 1.4694910030753634),
+2025-04-27 21:54:30,250 INFO 	          (47, 1.4791275559921624),
+2025-04-27 21:54:30,250 INFO 	          (48, 1.4677204254278942),
+2025-04-27 21:54:30,250 INFO 	          (49, 1.5033557760678116),
+2025-04-27 21:54:30,250 INFO 	          (50, 1.4774673082238081)],
+2025-04-27 21:54:30,250 INFO 	 'num_clients': [(1, 10),
+2025-04-27 21:54:30,250 INFO 	                 (2, 10),
+2025-04-27 21:54:30,250 INFO 	                 (3, 10),
+2025-04-27 21:54:30,250 INFO 	                 (4, 10),
+2025-04-27 21:54:30,250 INFO 	                 (5, 10),
+2025-04-27 21:54:30,250 INFO 	                 (6, 10),
+2025-04-27 21:54:30,250 INFO 	                 (7, 10),
+2025-04-27 21:54:30,250 INFO 	                 (8, 10),
+2025-04-27 21:54:30,250 INFO 	                 (9, 10),
+2025-04-27 21:54:30,250 INFO 	                 (10, 10),
+2025-04-27 21:54:30,251 INFO 	                 (11, 10),
+2025-04-27 21:54:30,251 INFO 	                 (12, 10),
+2025-04-27 21:54:30,251 INFO 	                 (13, 10),
+2025-04-27 21:54:30,251 INFO 	                 (14, 10),
+2025-04-27 21:54:30,251 INFO 	                 (15, 10),
+2025-04-27 21:54:30,251 INFO 	                 (16, 10),
+2025-04-27 21:54:30,251 INFO 	                 (17, 10),
+2025-04-27 21:54:30,251 INFO 	                 (18, 10),
+2025-04-27 21:54:30,251 INFO 	                 (19, 10),
+2025-04-27 21:54:30,251 INFO 	                 (20, 10),
+2025-04-27 21:54:30,251 INFO 	                 (21, 10),
+2025-04-27 21:54:30,251 INFO 	                 (22, 10),
+2025-04-27 21:54:30,251 INFO 	                 (23, 10),
+2025-04-27 21:54:30,251 INFO 	                 (24, 10),
+2025-04-27 21:54:30,251 INFO 	                 (25, 10),
+2025-04-27 21:54:30,252 INFO 	                 (26, 10),
+2025-04-27 21:54:30,252 INFO 	                 (27, 10),
+2025-04-27 21:54:30,252 INFO 	                 (28, 10),
+2025-04-27 21:54:30,252 INFO 	                 (29, 10),
+2025-04-27 21:54:30,252 INFO 	                 (30, 10),
+2025-04-27 21:54:30,252 INFO 	                 (31, 10),
+2025-04-27 21:54:30,252 INFO 	                 (32, 10),
+2025-04-27 21:54:30,252 INFO 	                 (33, 10),
+2025-04-27 21:54:30,252 INFO 	                 (34, 10),
+2025-04-27 21:54:30,252 INFO 	                 (35, 10),
+2025-04-27 21:54:30,252 INFO 	                 (36, 10),
+2025-04-27 21:54:30,252 INFO 	                 (37, 10),
+2025-04-27 21:54:30,252 INFO 	                 (38, 10),
+2025-04-27 21:54:30,252 INFO 	                 (39, 10),
+2025-04-27 21:54:30,252 INFO 	                 (40, 10),
+2025-04-27 21:54:30,252 INFO 	                 (41, 10),
+2025-04-27 21:54:30,253 INFO 	                 (42, 10),
+2025-04-27 21:54:30,253 INFO 	                 (43, 10),
+2025-04-27 21:54:30,253 INFO 	                 (44, 10),
+2025-04-27 21:54:30,253 INFO 	                 (45, 10),
+2025-04-27 21:54:30,253 INFO 	                 (46, 10),
+2025-04-27 21:54:30,253 INFO 	                 (47, 10),
+2025-04-27 21:54:30,253 INFO 	                 (48, 10),
+2025-04-27 21:54:30,253 INFO 	                 (49, 10),
+2025-04-27 21:54:30,253 INFO 	                 (50, 10)],
+2025-04-27 21:54:30,253 INFO 	 'precision': [(1, 0.08498985135184926),
+2025-04-27 21:54:30,253 INFO 	               (2, 0.293976311681784),
+2025-04-27 21:54:30,253 INFO 	               (3, 0.2970890849255267),
+2025-04-27 21:54:30,253 INFO 	               (4, 0.3175555716346897),
+2025-04-27 21:54:30,253 INFO 	               (5, 0.31539547920920513),
+2025-04-27 21:54:30,253 INFO 	               (6, 0.350210210666473),
+2025-04-27 21:54:30,254 INFO 	               (7, 0.3740953767958563),
+2025-04-27 21:54:30,254 INFO 	               (8, 0.36750635428079204),
+2025-04-27 21:54:30,254 INFO 	               (9, 0.3752736135599494),
+2025-04-27 21:54:30,254 INFO 	               (10, 0.3832062855054324),
+2025-04-27 21:54:30,254 INFO 	               (11, 0.38935325823682093),
+2025-04-27 21:54:30,254 INFO 	               (12, 0.38529473655370255),
+2025-04-27 21:54:30,254 INFO 	               (13, 0.38824474570025697),
+2025-04-27 21:54:30,254 INFO 	               (14, 0.3900038016422609),
+2025-04-27 21:54:30,254 INFO 	               (15, 0.38675034804103714),
+2025-04-27 21:54:30,254 INFO 	               (16, 0.39021055636245067),
+2025-04-27 21:54:30,254 INFO 	               (17, 0.39392856995532816),
+2025-04-27 21:54:30,254 INFO 	               (18, 0.3959122013875394),
+2025-04-27 21:54:30,254 INFO 	               (19, 0.3939373834075162),
+2025-04-27 21:54:30,254 INFO 	               (20, 0.4067358540625101),
+2025-04-27 21:54:30,254 INFO 	               (21, 0.3893043458340469),
+2025-04-27 21:54:30,255 INFO 	               (22, 0.3945085736856716),
+2025-04-27 21:54:30,255 INFO 	               (23, 0.3969430727051265),
+2025-04-27 21:54:30,255 INFO 	               (24, 0.40333040104083434),
+2025-04-27 21:54:30,255 INFO 	               (25, 0.3937769772749962),
+2025-04-27 21:54:30,255 INFO 	               (26, 0.4011455073038038),
+2025-04-27 21:54:30,255 INFO 	               (27, 0.39838377574977685),
+2025-04-27 21:54:30,255 INFO 	               (28, 0.40412893339277023),
+2025-04-27 21:54:30,255 INFO 	               (29, 0.4065168654379962),
+2025-04-27 21:54:30,255 INFO 	               (30, 0.40653811506932686),
+2025-04-27 21:54:30,255 INFO 	               (31, 0.4088014899418173),
+2025-04-27 21:54:30,255 INFO 	               (32, 0.4010904788225311),
+2025-04-27 21:54:30,255 INFO 	               (33, 0.39877904165640427),
+2025-04-27 21:54:30,255 INFO 	               (34, 0.4024353491108636),
+2025-04-27 21:54:30,255 INFO 	               (35, 0.40501428604228723),
+2025-04-27 21:54:30,255 INFO 	               (36, 0.4035200811111689),
+2025-04-27 21:54:30,255 INFO 	               (37, 0.4061604942509368),
+2025-04-27 21:54:30,256 INFO 	               (38, 0.3975349635767425),
+2025-04-27 21:54:30,256 INFO 	               (39, 0.40071851671909525),
+2025-04-27 21:54:30,256 INFO 	               (40, 0.40973323312435583),
+2025-04-27 21:54:30,256 INFO 	               (41, 0.40332360680872503),
+2025-04-27 21:54:30,256 INFO 	               (42, 0.3965854454822508),
+2025-04-27 21:54:30,256 INFO 	               (43, 0.40377097278330354),
+2025-04-27 21:54:30,256 INFO 	               (44, 0.4044917853152443),
+2025-04-27 21:54:30,256 INFO 	               (45, 0.4039801287019853),
+2025-04-27 21:54:30,256 INFO 	               (46, 0.3979619982643614),
+2025-04-27 21:54:30,256 INFO 	               (47, 0.39541209346410183),
+2025-04-27 21:54:30,256 INFO 	               (48, 0.3956287209578148),
+2025-04-27 21:54:30,256 INFO 	               (49, 0.4062680400346296),
+2025-04-27 21:54:30,256 INFO 	               (50, 0.4076265762243733)],
+2025-04-27 21:54:30,256 INFO 	 'recall': [(1, 0.12642363075660926),
+2025-04-27 21:54:30,257 INFO 	            (2, 0.19709276389150024),
+2025-04-27 21:54:30,257 INFO 	            (3, 0.2970008254682284),
+2025-04-27 21:54:30,257 INFO 	            (4, 0.3650046731186524),
+2025-04-27 21:54:30,257 INFO 	            (5, 0.366900336254594),
+2025-04-27 21:54:30,257 INFO 	            (6, 0.39797698812320087),
+2025-04-27 21:54:30,257 INFO 	            (7, 0.4226419046539523),
+2025-04-27 21:54:30,257 INFO 	            (8, 0.4287024749719427),
+2025-04-27 21:54:30,257 INFO 	            (9, 0.44103445259058466),
+2025-04-27 21:54:30,257 INFO 	            (10, 0.4419892749632534),
+2025-04-27 21:54:30,257 INFO 	            (11, 0.450765577643537),
+2025-04-27 21:54:30,257 INFO 	            (12, 0.4419887571352938),
+2025-04-27 21:54:30,257 INFO 	            (13, 0.4435942569604626),
+2025-04-27 21:54:30,257 INFO 	            (14, 0.45438886692523267),
+2025-04-27 21:54:30,257 INFO 	            (15, 0.46223048565502217),
+2025-04-27 21:54:30,258 INFO 	            (16, 0.45893416626679223),
+2025-04-27 21:54:30,258 INFO 	            (17, 0.474144871817121),
+2025-04-27 21:54:30,258 INFO 	            (18, 0.4876485342977219),
+2025-04-27 21:54:30,258 INFO 	            (19, 0.4753636023889711),
+2025-04-27 21:54:30,258 INFO 	            (20, 0.48308357372082256),
+2025-04-27 21:54:30,258 INFO 	            (21, 0.4793909428012586),
+2025-04-27 21:54:30,258 INFO 	            (22, 0.48112271358008746),
+2025-04-27 21:54:30,258 INFO 	            (23, 0.4831082594391803),
+2025-04-27 21:54:30,258 INFO 	            (24, 0.49646234371369324),
+2025-04-27 21:54:30,258 INFO 	            (25, 0.49444619895472436),
+2025-04-27 21:54:30,258 INFO 	            (26, 0.5032345880700099),
+2025-04-27 21:54:30,258 INFO 	            (27, 0.4810050878072943),
+2025-04-27 21:54:30,258 INFO 	            (28, 0.48729072925439415),
+2025-04-27 21:54:30,258 INFO 	            (29, 0.49791452702486033),
+2025-04-27 21:54:30,258 INFO 	            (30, 0.48213009856347644),
+2025-04-27 21:54:30,259 INFO 	            (31, 0.5006532561218417),
+2025-04-27 21:54:30,259 INFO 	            (32, 0.48953488748646246),
+2025-04-27 21:54:30,259 INFO 	            (33, 0.4935295791421559),
+2025-04-27 21:54:30,259 INFO 	            (34, 0.4887138297425787),
+2025-04-27 21:54:30,259 INFO 	            (35, 0.47880183515243374),
+2025-04-27 21:54:30,259 INFO 	            (36, 0.5131270084055205),
+2025-04-27 21:54:30,259 INFO 	            (37, 0.5101773436723607),
+2025-04-27 21:54:30,259 INFO 	            (38, 0.4654933986018604),
+2025-04-27 21:54:30,259 INFO 	            (39, 0.47277617155726387),
+2025-04-27 21:54:30,259 INFO 	            (40, 0.5102772575746954),
+2025-04-27 21:54:30,259 INFO 	            (41, 0.48930332899358364),
+2025-04-27 21:54:30,259 INFO 	            (42, 0.4818763932768227),
+2025-04-27 21:54:30,259 INFO 	            (43, 0.48635032553432067),
+2025-04-27 21:54:30,259 INFO 	            (44, 0.49563540127958167),
+2025-04-27 21:54:30,260 INFO 	            (45, 0.4938022623674762),
+2025-04-27 21:54:30,260 INFO 	            (46, 0.4795740680761538),
+2025-04-27 21:54:30,260 INFO 	            (47, 0.4892205917994043),
+2025-04-27 21:54:30,260 INFO 	            (48, 0.4939186311509),
+2025-04-27 21:54:30,260 INFO 	            (49, 0.48249479865124784),
+2025-04-27 21:54:30,260 INFO 	            (50, 0.48323218564256565)],
+2025-04-27 21:54:30,260 INFO 	 'total_examples': [(1, 319),
+2025-04-27 21:54:30,260 INFO 	                    (2, 319),
+2025-04-27 21:54:30,260 INFO 	                    (3, 319),
+2025-04-27 21:54:30,260 INFO 	                    (4, 319),
+2025-04-27 21:54:30,260 INFO 	                    (5, 319),
+2025-04-27 21:54:30,260 INFO 	                    (6, 319),
+2025-04-27 21:54:30,260 INFO 	                    (7, 319),
+2025-04-27 21:54:30,261 INFO 	                    (8, 319),
+2025-04-27 21:54:30,261 INFO 	                    (9, 319),
+2025-04-27 21:54:30,261 INFO 	                    (10, 319),
+2025-04-27 21:54:30,261 INFO 	                    (11, 319),
+2025-04-27 21:54:30,261 INFO 	                    (12, 319),
+2025-04-27 21:54:30,261 INFO 	                    (13, 319),
+2025-04-27 21:54:30,261 INFO 	                    (14, 319),
+2025-04-27 21:54:30,261 INFO 	                    (15, 319),
+2025-04-27 21:54:30,261 INFO 	                    (16, 319),
+2025-04-27 21:54:30,261 INFO 	                    (17, 319),
+2025-04-27 21:54:30,261 INFO 	                    (18, 319),
+2025-04-27 21:54:30,261 INFO 	                    (19, 319),
+2025-04-27 21:54:30,261 INFO 	                    (20, 319),
+2025-04-27 21:54:30,261 INFO 	                    (21, 319),
+2025-04-27 21:54:30,261 INFO 	                    (22, 319),
+2025-04-27 21:54:30,261 INFO 	                    (23, 319),
+2025-04-27 21:54:30,262 INFO 	                    (24, 319),
+2025-04-27 21:54:30,262 INFO 	                    (25, 319),
+2025-04-27 21:54:30,262 INFO 	                    (26, 319),
+2025-04-27 21:54:30,262 INFO 	                    (27, 319),
+2025-04-27 21:54:30,262 INFO 	                    (28, 319),
+2025-04-27 21:54:30,262 INFO 	                    (29, 319),
+2025-04-27 21:54:30,262 INFO 	                    (30, 319),
+2025-04-27 21:54:30,262 INFO 	                    (31, 319),
+2025-04-27 21:54:30,262 INFO 	                    (32, 319),
+2025-04-27 21:54:30,262 INFO 	                    (33, 319),
+2025-04-27 21:54:30,262 INFO 	                    (34, 319),
+2025-04-27 21:54:30,262 INFO 	                    (35, 319),
+2025-04-27 21:54:30,262 INFO 	                    (36, 319),
+2025-04-27 21:54:30,262 INFO 	                    (37, 319),
+2025-04-27 21:54:30,263 INFO 	                    (38, 319),
+2025-04-27 21:54:30,263 INFO 	                    (39, 319),
+2025-04-27 21:54:30,263 INFO 	                    (40, 319),
+2025-04-27 21:54:30,263 INFO 	                    (41, 319),
+2025-04-27 21:54:30,263 INFO 	                    (42, 319),
+2025-04-27 21:54:30,263 INFO 	                    (43, 319),
+2025-04-27 21:54:30,263 INFO 	                    (44, 319),
+2025-04-27 21:54:30,263 INFO 	                    (45, 319),
+2025-04-27 21:54:30,263 INFO 	                    (46, 319),
+2025-04-27 21:54:30,263 INFO 	                    (47, 319),
+2025-04-27 21:54:30,263 INFO 	                    (48, 319),
+2025-04-27 21:54:30,263 INFO 	                    (49, 319),
+2025-04-27 21:54:30,263 INFO 	                    (50, 319)]}
+2025-04-27 21:54:30,263 INFO 
+2025-04-27 21:54:30,265 DEBUG ServerApp finished running.
+2025-04-27 21:54:30,265 DEBUG ServerApp finished running.
+2025-04-27 21:54:30,265 DEBUG Triggered stop event for Simulation Engine.
+2025-04-27 21:54:31,189 DEBUG Terminated 4 actors
+2025-04-27 21:54:32,745 DEBUG Terminated RayBackend
+2025-04-27 21:54:32,746 DEBUG Stopping Simulation Engine now.
