@@ -1,0 +1,1671 @@
+2025-04-27 09:39:00,070 DEBUG Pre-registering run with id 4764454211690883476
+2025-04-27 09:39:00,072 DEBUG Using InMemoryState
+2025-04-27 09:39:00,072 DEBUG Using InMemoryState
+2025-04-27 09:39:00,074 DEBUG Using InMemoryState
+2025-04-27 09:39:00,074 DEBUG Registered 10 nodes
+2025-04-27 09:39:00,074 DEBUG Supported backends: ['ray']
+2025-04-27 09:39:00,075 DEBUG Initialising: RayBackend
+2025-04-27 09:39:00,075 DEBUG Backend config: {'client_resources': {'num_cpus': 1, 'num_gpus': 1.0}, 'init_args': {'logging_level': 30, 'log_to_driver': True}, 'actor': {'tensorflow': 0}}
+2025-04-27 09:39:00,073 INFO Starting Flower ServerApp, config: num_rounds=50, no round_timeout
+2025-04-27 09:39:00,079 INFO 
+2025-04-27 09:39:00,080 INFO [INIT]
+2025-04-27 09:39:00,080 INFO Requesting initial parameters from one random client
+2025-04-27 09:39:04,822 DEBUG Constructed ActorPool with: 1 actors
+2025-04-27 09:39:04,823 DEBUG Using InMemoryState
+2025-04-27 09:39:18,325 INFO Received initial parameters from one random client
+2025-04-27 09:39:18,326 INFO Starting evaluation of initial global parameters
+2025-04-27 09:39:18,326 INFO Evaluation returned no results (`None`)
+2025-04-27 09:39:18,326 INFO 
+2025-04-27 09:39:18,326 INFO [ROUND 1]
+2025-04-27 09:39:18,326 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:39:57,702 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:39:57,716 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:40:21,656 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:40:21,656 INFO 
+2025-04-27 09:40:21,656 INFO [ROUND 2]
+2025-04-27 09:40:21,657 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:41:01,737 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:41:01,748 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:41:24,297 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:41:24,298 INFO 
+2025-04-27 09:41:24,298 INFO [ROUND 3]
+2025-04-27 09:41:24,298 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:41:53,262 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:41:53,279 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:42:15,223 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:42:15,224 INFO 
+2025-04-27 09:42:15,224 INFO [ROUND 4]
+2025-04-27 09:42:15,224 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:42:54,710 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:42:54,722 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:43:18,067 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:43:18,067 INFO 
+2025-04-27 09:43:18,068 INFO [ROUND 5]
+2025-04-27 09:43:18,068 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:43:56,355 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:43:56,366 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:44:20,310 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:44:20,310 INFO 
+2025-04-27 09:44:20,311 INFO [ROUND 6]
+2025-04-27 09:44:20,311 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:44:25,680 ERROR An exception was raised when processing a message by RayBackend
+2025-04-27 09:44:25,680 ERROR [36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+             ^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/client.py", line 46, in client_fn
+    trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/data.py", line 49, in load_datasets
+    partition = fds.load_partition(partition_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 2132, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 1890, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 521, in glob
+    return super().glob(path, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 556, in find
+    return super().find(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 719, in info
+    paths_info = self._api.get_paths_info(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_api.py", line 3362, in get_paths_info
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+2025-04-27 09:44:25,683 ERROR Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/vce_api.py", line 111, in worker
+    out_mssg, updated_context = backend.process_message(message, context)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 187, in process_message
+    raise ex
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 175, in process_message
+    ) = self.pool.fetch_result_and_return_actor_to_pool(future)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 480, in fetch_result_and_return_actor_to_pool
+    _, out_mssg, updated_context = ray.get(future)
+                                   ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/worker.py", line 2639, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+             ^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/client.py", line 46, in client_fn
+    trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/data.py", line 49, in load_datasets
+    partition = fds.load_partition(partition_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 2132, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 1890, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 521, in glob
+    return super().glob(path, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 556, in find
+    return super().find(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 719, in info
+    paths_info = self._api.get_paths_info(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_api.py", line 3362, in get_paths_info
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+2025-04-27 09:44:51,890 INFO aggregate_fit: received 9 results and 1 failures
+2025-04-27 09:44:51,911 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:45:17,274 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:45:17,275 INFO 
+2025-04-27 09:45:17,275 INFO [ROUND 7]
+2025-04-27 09:45:17,275 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:45:57,457 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:45:57,469 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:46:30,741 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:46:30,741 INFO 
+2025-04-27 09:46:30,741 INFO [ROUND 8]
+2025-04-27 09:46:30,742 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:47:12,237 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:47:12,249 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:47:36,004 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:47:36,004 INFO 
+2025-04-27 09:47:36,005 INFO [ROUND 9]
+2025-04-27 09:47:36,005 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:48:17,095 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:48:17,106 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:48:40,358 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:48:40,359 INFO 
+2025-04-27 09:48:40,359 INFO [ROUND 10]
+2025-04-27 09:48:40,359 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:49:20,044 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:49:20,056 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:49:43,402 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:49:43,403 INFO 
+2025-04-27 09:49:43,403 INFO [ROUND 11]
+2025-04-27 09:49:43,403 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:50:25,494 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:50:25,506 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:50:48,561 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:50:48,562 INFO 
+2025-04-27 09:50:48,562 INFO [ROUND 12]
+2025-04-27 09:50:48,562 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:51:27,755 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:51:27,772 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:51:50,422 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:51:50,423 INFO 
+2025-04-27 09:51:50,423 INFO [ROUND 13]
+2025-04-27 09:51:50,423 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:52:30,314 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:52:30,326 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:52:52,576 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:52:52,578 INFO 
+2025-04-27 09:52:52,578 INFO [ROUND 14]
+2025-04-27 09:52:52,579 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:53:33,165 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:53:33,178 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:53:54,723 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:53:54,723 INFO 
+2025-04-27 09:53:54,724 INFO [ROUND 15]
+2025-04-27 09:53:54,724 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:54:34,316 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:54:34,334 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:54:57,379 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:54:57,379 INFO 
+2025-04-27 09:54:57,379 INFO [ROUND 16]
+2025-04-27 09:54:57,380 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:55:36,664 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:55:36,675 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:56:00,126 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:56:00,127 INFO 
+2025-04-27 09:56:00,127 INFO [ROUND 17]
+2025-04-27 09:56:00,127 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:56:41,819 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:56:41,831 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:57:04,276 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:57:04,277 INFO 
+2025-04-27 09:57:04,277 INFO [ROUND 18]
+2025-04-27 09:57:04,277 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:57:43,364 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:57:43,388 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:58:00,934 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:58:00,934 INFO 
+2025-04-27 09:58:00,934 INFO [ROUND 19]
+2025-04-27 09:58:00,934 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:58:34,207 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:58:34,219 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:58:56,959 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:58:56,960 INFO 
+2025-04-27 09:58:56,960 INFO [ROUND 20]
+2025-04-27 09:58:56,960 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 09:59:36,245 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 09:59:36,256 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 09:59:58,901 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 09:59:58,902 INFO 
+2025-04-27 09:59:58,902 INFO [ROUND 21]
+2025-04-27 09:59:58,902 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:00:37,987 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:00:38,005 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:01:02,351 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:01:02,352 INFO 
+2025-04-27 10:01:02,352 INFO [ROUND 22]
+2025-04-27 10:01:02,352 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:01:43,229 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:01:43,244 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:02:05,884 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:02:05,884 INFO 
+2025-04-27 10:02:05,885 INFO [ROUND 23]
+2025-04-27 10:02:05,885 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:02:47,365 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:02:47,376 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:03:10,137 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:03:10,138 INFO 
+2025-04-27 10:03:10,138 INFO [ROUND 24]
+2025-04-27 10:03:10,138 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:03:49,944 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:03:49,955 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:04:14,302 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:04:14,302 INFO 
+2025-04-27 10:04:14,302 INFO [ROUND 25]
+2025-04-27 10:04:14,303 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:04:53,094 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:04:53,106 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:05:17,654 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:05:17,654 INFO 
+2025-04-27 10:05:17,654 INFO [ROUND 26]
+2025-04-27 10:05:17,655 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:05:57,547 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:05:57,564 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:06:21,613 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:06:21,613 INFO 
+2025-04-27 10:06:21,614 INFO [ROUND 27]
+2025-04-27 10:06:21,614 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:07:01,097 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:07:01,109 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:07:24,455 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:07:24,455 INFO 
+2025-04-27 10:07:24,455 INFO [ROUND 28]
+2025-04-27 10:07:24,456 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:08:04,754 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:08:04,765 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:08:27,310 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:08:27,310 INFO 
+2025-04-27 10:08:27,311 INFO [ROUND 29]
+2025-04-27 10:08:27,311 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:09:07,210 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:09:07,222 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:09:30,771 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:09:30,772 INFO 
+2025-04-27 10:09:30,772 INFO [ROUND 30]
+2025-04-27 10:09:30,772 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:10:11,054 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:10:11,069 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:10:34,414 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:10:34,414 INFO 
+2025-04-27 10:10:34,414 INFO [ROUND 31]
+2025-04-27 10:10:34,414 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:11:14,703 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:11:14,714 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:11:38,459 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:11:38,460 INFO 
+2025-04-27 10:11:38,460 INFO [ROUND 32]
+2025-04-27 10:11:38,460 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:12:18,142 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:12:18,154 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:12:42,206 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:12:42,206 INFO 
+2025-04-27 10:12:42,207 INFO [ROUND 33]
+2025-04-27 10:12:42,207 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:13:20,782 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:13:20,794 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:13:43,540 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:13:43,541 INFO 
+2025-04-27 10:13:43,541 INFO [ROUND 34]
+2025-04-27 10:13:43,541 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:14:21,219 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:14:21,231 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:14:43,881 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:14:43,881 INFO 
+2025-04-27 10:14:43,882 INFO [ROUND 35]
+2025-04-27 10:14:43,882 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:15:21,263 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:15:21,274 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:15:44,316 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:15:44,317 INFO 
+2025-04-27 10:15:44,318 INFO [ROUND 36]
+2025-04-27 10:15:44,318 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:16:22,701 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:16:22,716 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:16:45,867 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:16:45,868 INFO 
+2025-04-27 10:16:45,868 INFO [ROUND 37]
+2025-04-27 10:16:45,868 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:17:21,948 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:17:21,959 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:17:45,705 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:17:45,705 INFO 
+2025-04-27 10:17:45,705 INFO [ROUND 38]
+2025-04-27 10:17:45,706 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:18:24,497 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:18:24,511 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:18:47,661 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:18:47,661 INFO 
+2025-04-27 10:18:47,662 INFO [ROUND 39]
+2025-04-27 10:18:47,662 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:19:27,141 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:19:27,152 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:19:48,992 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:19:48,992 INFO 
+2025-04-27 10:19:48,993 INFO [ROUND 40]
+2025-04-27 10:19:48,993 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:20:27,978 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:20:27,990 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:20:50,930 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:20:50,931 INFO 
+2025-04-27 10:20:50,931 INFO [ROUND 41]
+2025-04-27 10:20:50,931 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:21:31,005 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:21:31,020 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:21:52,456 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:21:52,456 INFO 
+2025-04-27 10:21:52,456 INFO [ROUND 42]
+2025-04-27 10:21:52,457 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:22:05,740 ERROR An exception was raised when processing a message by RayBackend
+2025-04-27 10:22:05,741 ERROR [36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/uoft-cs/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+             ^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/client.py", line 46, in client_fn
+    trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/data.py", line 49, in load_datasets
+    partition = fds.load_partition(partition_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 2132, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 1890, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 521, in glob
+    return super().glob(path, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 556, in find
+    return super().find(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 719, in info
+    paths_info = self._api.get_paths_info(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_api.py", line 3362, in get_paths_info
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/uoft-cs/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/uoft-cs/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+2025-04-27 10:22:05,742 ERROR Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/vce_api.py", line 111, in worker
+    out_mssg, updated_context = backend.process_message(message, context)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 187, in process_message
+    raise ex
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 175, in process_message
+    ) = self.pool.fetch_result_and_return_actor_to_pool(future)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 480, in fetch_result_and_return_actor_to_pool
+    _, out_mssg, updated_context = ray.get(future)
+                                   ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/worker.py", line 2639, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/uoft-cs/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+             ^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/client.py", line 46, in client_fn
+    trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/data.py", line 49, in load_datasets
+    partition = fds.load_partition(partition_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 2132, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 1890, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 521, in glob
+    return super().glob(path, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 556, in find
+    return super().find(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 719, in info
+    paths_info = self._api.get_paths_info(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_api.py", line 3362, in get_paths_info
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/uoft-cs/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/uoft-cs/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+2025-04-27 10:22:20,425 INFO aggregate_fit: received 9 results and 1 failures
+2025-04-27 10:22:20,442 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:22:28,466 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:22:28,466 INFO 
+2025-04-27 10:22:28,466 INFO [ROUND 43]
+2025-04-27 10:22:28,467 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:23:06,339 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:23:06,355 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:23:28,996 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:23:28,996 INFO 
+2025-04-27 10:23:28,997 INFO [ROUND 44]
+2025-04-27 10:23:28,997 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:24:07,068 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:24:07,080 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:24:29,425 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:24:29,425 INFO 
+2025-04-27 10:24:29,425 INFO [ROUND 45]
+2025-04-27 10:24:29,426 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:25:00,406 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:25:00,417 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:25:23,862 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:25:23,862 INFO 
+2025-04-27 10:25:23,862 INFO [ROUND 46]
+2025-04-27 10:25:23,862 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:26:03,346 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:26:03,363 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:26:26,508 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:26:26,508 INFO 
+2025-04-27 10:26:26,509 INFO [ROUND 47]
+2025-04-27 10:26:26,509 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:27:04,881 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:27:04,894 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:27:10,708 ERROR An exception was raised when processing a message by RayBackend
+2025-04-27 10:27:10,708 ERROR [36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+             ^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/client.py", line 46, in client_fn
+    trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/data.py", line 49, in load_datasets
+    partition = fds.load_partition(partition_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 2132, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 1890, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 521, in glob
+    return super().glob(path, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 556, in find
+    return super().find(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 719, in info
+    paths_info = self._api.get_paths_info(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_api.py", line 3362, in get_paths_info
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+2025-04-27 10:27:10,709 ERROR Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/vce_api.py", line 111, in worker
+    out_mssg, updated_context = backend.process_message(message, context)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 187, in process_message
+    raise ex
+  File "/usr/local/lib/python3.11/dist-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 175, in process_message
+    ) = self.pool.fetch_result_and_return_actor_to_pool(future)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 480, in fetch_result_and_return_actor_to_pool
+    _, out_mssg, updated_context = ray.get(future)
+                                   ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/worker.py", line 2639, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+             ^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/client.py", line 46, in client_fn
+    trainloader, valloader, test_loader = load_datasets(partition_id=partition_id)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/7643-fl-momentum/data.py", line 49, in load_datasets
+    partition = fds.load_partition(partition_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/usr/local/lib/python3.11/dist-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 2132, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/load.py", line 1890, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+                                       ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/usr/local/lib/python3.11/dist-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 521, in glob
+    return super().glob(path, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 556, in find
+    return super().find(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_file_system.py", line 719, in info
+    paths_info = self._api.get_paths_info(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/hf_api.py", line 3362, in get_paths_info
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=27587, ip=172.28.0.12, actor_id=0041998b959e90898ca1bac801000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x1484ae2857d0>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/cifar100/paths-info/aadb3af77e9048adbea6b47c21a81e47dd092ae5
+
+2025-04-27 10:27:15,715 INFO aggregate_evaluate: received 9 results and 1 failures
+2025-04-27 10:27:15,716 INFO 
+2025-04-27 10:27:15,716 INFO [ROUND 48]
+2025-04-27 10:27:15,716 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:27:43,974 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:27:43,984 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:28:06,924 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:28:06,925 INFO 
+2025-04-27 10:28:06,925 INFO [ROUND 49]
+2025-04-27 10:28:06,925 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:28:46,611 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:28:46,623 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:29:09,363 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:29:09,363 INFO 
+2025-04-27 10:29:09,364 INFO [ROUND 50]
+2025-04-27 10:29:09,364 INFO configure_fit: strategy sampled 10 clients (out of 10)
+2025-04-27 10:29:45,642 INFO aggregate_fit: received 10 results and 0 failures
+2025-04-27 10:29:45,653 INFO configure_evaluate: strategy sampled 10 clients (out of 10)
+2025-04-27 10:30:09,099 INFO aggregate_evaluate: received 10 results and 0 failures
+2025-04-27 10:30:09,099 INFO 
+2025-04-27 10:30:09,100 INFO [SUMMARY]
+2025-04-27 10:30:09,100 INFO Run finished 50 round(s) in 3050.77s
+2025-04-27 10:30:09,105 INFO 	History (loss, distributed):
+2025-04-27 10:30:09,106 INFO 		round 1: 4.596946389973164
+2025-04-27 10:30:09,106 INFO 		round 2: 4.589644412696361
+2025-04-27 10:30:09,106 INFO 		round 3: 4.549675606191158
+2025-04-27 10:30:09,106 INFO 		round 4: 4.4481011018157
+2025-04-27 10:30:09,106 INFO 		round 5: 4.348635566979647
+2025-04-27 10:30:09,106 INFO 		round 6: 4.227510592341423
+2025-04-27 10:30:09,107 INFO 		round 7: 4.196225344389677
+2025-04-27 10:30:09,107 INFO 		round 8: 4.18292608782649
+2025-04-27 10:30:09,107 INFO 		round 9: 4.091799188405275
+2025-04-27 10:30:09,107 INFO 		round 10: 4.085815767943859
+2025-04-27 10:30:09,107 INFO 		round 11: 4.058754034340382
+2025-04-27 10:30:09,107 INFO 		round 12: 4.018406300246715
+2025-04-27 10:30:09,107 INFO 		round 13: 3.9596869848668574
+2025-04-27 10:30:09,108 INFO 		round 14: 3.9403045147657396
+2025-04-27 10:30:09,108 INFO 		round 15: 3.9989244610071184
+2025-04-27 10:30:09,108 INFO 		round 16: 4.001513209193945
+2025-04-27 10:30:09,108 INFO 		round 17: 3.9433398552238943
+2025-04-27 10:30:09,108 INFO 		round 18: 3.9311303555965424
+2025-04-27 10:30:09,108 INFO 		round 19: 3.92759046331048
+2025-04-27 10:30:09,108 INFO 		round 20: 3.9119109727442263
+2025-04-27 10:30:09,109 INFO 		round 21: 3.913287115097046
+2025-04-27 10:30:09,109 INFO 		round 22: 3.9208642870187758
+2025-04-27 10:30:09,109 INFO 		round 23: 3.8710037745535373
+2025-04-27 10:30:09,109 INFO 		round 24: 3.933564965426922
+2025-04-27 10:30:09,109 INFO 		round 25: 3.9106634385883807
+2025-04-27 10:30:09,109 INFO 		round 26: 3.896257056295872
+2025-04-27 10:30:09,110 INFO 		round 27: 3.9120253942906857
+2025-04-27 10:30:09,110 INFO 		round 28: 3.8981023423373697
+2025-04-27 10:30:09,110 INFO 		round 29: 3.8830885641276836
+2025-04-27 10:30:09,110 INFO 		round 30: 3.9122146524488928
+2025-04-27 10:30:09,110 INFO 		round 31: 3.9016540691256525
+2025-04-27 10:30:09,110 INFO 		round 32: 3.878947898745537
+2025-04-27 10:30:09,111 INFO 		round 33: 3.866327863931656
+2025-04-27 10:30:09,111 INFO 		round 34: 3.8954213961958883
+2025-04-27 10:30:09,111 INFO 		round 35: 3.9014770582318308
+2025-04-27 10:30:09,111 INFO 		round 36: 3.884260284900665
+2025-04-27 10:30:09,111 INFO 		round 37: 3.8775025755167007
+2025-04-27 10:30:09,112 INFO 		round 38: 3.878213822096586
+2025-04-27 10:30:09,112 INFO 		round 39: 3.9036466754972934
+2025-04-27 10:30:09,112 INFO 		round 40: 3.8773134648799896
+2025-04-27 10:30:09,112 INFO 		round 41: 3.8805610835552216
+2025-04-27 10:30:09,112 INFO 		round 42: 3.849958249926567
+2025-04-27 10:30:09,112 INFO 		round 43: 3.888373140245676
+2025-04-27 10:30:09,112 INFO 		round 44: 3.908785788714886
+2025-04-27 10:30:09,112 INFO 		round 45: 3.896415416151285
+2025-04-27 10:30:09,113 INFO 		round 46: 3.881327022612095
+2025-04-27 10:30:09,113 INFO 		round 47: 3.8671215921640396
+2025-04-27 10:30:09,113 INFO 		round 48: 3.8788763605058194
+2025-04-27 10:30:09,113 INFO 		round 49: 3.8885395929217337
+2025-04-27 10:30:09,113 INFO 		round 50: 3.8935999274253845
+2025-04-27 10:30:09,113 INFO 	History (metrics, distributed, fit):
+2025-04-27 10:30:09,114 INFO 	{'accuracy': [(1, 0.0249),
+2025-04-27 10:30:09,114 INFO 	              (2, 0.0271),
+2025-04-27 10:30:09,114 INFO 	              (3, 0.0367),
+2025-04-27 10:30:09,114 INFO 	              (4, 0.039),
+2025-04-27 10:30:09,114 INFO 	              (5, 0.0477),
+2025-04-27 10:30:09,114 INFO 	              (6, 0.05177777777777778),
+2025-04-27 10:30:09,115 INFO 	              (7, 0.0554),
+2025-04-27 10:30:09,115 INFO 	              (8, 0.0496),
+2025-04-27 10:30:09,115 INFO 	              (9, 0.0598),
+2025-04-27 10:30:09,115 INFO 	              (10, 0.0578),
+2025-04-27 10:30:09,115 INFO 	              (11, 0.0639),
+2025-04-27 10:30:09,115 INFO 	              (12, 0.0654),
+2025-04-27 10:30:09,115 INFO 	              (13, 0.0646),
+2025-04-27 10:30:09,116 INFO 	              (14, 0.0721),
+2025-04-27 10:30:09,116 INFO 	              (15, 0.0702),
+2025-04-27 10:30:09,116 INFO 	              (16, 0.0671),
+2025-04-27 10:30:09,116 INFO 	              (17, 0.0683),
+2025-04-27 10:30:09,116 INFO 	              (18, 0.0707),
+2025-04-27 10:30:09,116 INFO 	              (19, 0.0714),
+2025-04-27 10:30:09,117 INFO 	              (20, 0.0691),
+2025-04-27 10:30:09,117 INFO 	              (21, 0.0729),
+2025-04-27 10:30:09,117 INFO 	              (22, 0.0749),
+2025-04-27 10:30:09,117 INFO 	              (23, 0.0783),
+2025-04-27 10:30:09,117 INFO 	              (24, 0.0708),
+2025-04-27 10:30:09,117 INFO 	              (25, 0.073),
+2025-04-27 10:30:09,117 INFO 	              (26, 0.0793),
+2025-04-27 10:30:09,118 INFO 	              (27, 0.0746),
+2025-04-27 10:30:09,118 INFO 	              (28, 0.0754),
+2025-04-27 10:30:09,118 INFO 	              (29, 0.0746),
+2025-04-27 10:30:09,118 INFO 	              (30, 0.0669),
+2025-04-27 10:30:09,118 INFO 	              (31, 0.0736),
+2025-04-27 10:30:09,118 INFO 	              (32, 0.0737),
+2025-04-27 10:30:09,119 INFO 	              (33, 0.0704),
+2025-04-27 10:30:09,119 INFO 	              (34, 0.0747),
+2025-04-27 10:30:09,119 INFO 	              (35, 0.0708),
+2025-04-27 10:30:09,120 INFO 	              (36, 0.0751),
+2025-04-27 10:30:09,120 INFO 	              (37, 0.0775),
+2025-04-27 10:30:09,120 INFO 	              (38, 0.0731),
+2025-04-27 10:30:09,120 INFO 	              (39, 0.0714),
+2025-04-27 10:30:09,120 INFO 	              (40, 0.0736),
+2025-04-27 10:30:09,120 INFO 	              (41, 0.0741),
+2025-04-27 10:30:09,121 INFO 	              (42, 0.07733333333333334),
+2025-04-27 10:30:09,121 INFO 	              (43, 0.066),
+2025-04-27 10:30:09,121 INFO 	              (44, 0.0759),
+2025-04-27 10:30:09,121 INFO 	              (45, 0.0759),
+2025-04-27 10:30:09,121 INFO 	              (46, 0.078),
+2025-04-27 10:30:09,121 INFO 	              (47, 0.0728),
+2025-04-27 10:30:09,121 INFO 	              (48, 0.0718),
+2025-04-27 10:30:09,121 INFO 	              (49, 0.0771),
+2025-04-27 10:30:09,122 INFO 	              (50, 0.0732)],
+2025-04-27 10:30:09,122 INFO 	 'f1_score': [(1, 0.004756820495347924),
+2025-04-27 10:30:09,122 INFO 	              (2, 0.005326788715085285),
+2025-04-27 10:30:09,122 INFO 	              (3, 0.012317967950496016),
+2025-04-27 10:30:09,122 INFO 	              (4, 0.014660768150869202),
+2025-04-27 10:30:09,122 INFO 	              (5, 0.019093010399137474),
+2025-04-27 10:30:09,122 INFO 	              (6, 0.023668636609980715),
+2025-04-27 10:30:09,123 INFO 	              (7, 0.02770152263950007),
+2025-04-27 10:30:09,123 INFO 	              (8, 0.023297167321403373),
+2025-04-27 10:30:09,123 INFO 	              (9, 0.03370995050130642),
+2025-04-27 10:30:09,123 INFO 	              (10, 0.03314899563442526),
+2025-04-27 10:30:09,123 INFO 	              (11, 0.03669654417920184),
+2025-04-27 10:30:09,123 INFO 	              (12, 0.040023963550025424),
+2025-04-27 10:30:09,124 INFO 	              (13, 0.040554699426565165),
+2025-04-27 10:30:09,124 INFO 	              (14, 0.04612735160317607),
+2025-04-27 10:30:09,124 INFO 	              (15, 0.0438860080761857),
+2025-04-27 10:30:09,124 INFO 	              (16, 0.04122571616996884),
+2025-04-27 10:30:09,124 INFO 	              (17, 0.04417234443074366),
+2025-04-27 10:30:09,124 INFO 	              (18, 0.04731240202282761),
+2025-04-27 10:30:09,124 INFO 	              (19, 0.04778269143099715),
+2025-04-27 10:30:09,125 INFO 	              (20, 0.0455871584908536),
+2025-04-27 10:30:09,125 INFO 	              (21, 0.05014604578244161),
+2025-04-27 10:30:09,125 INFO 	              (22, 0.05209131926819716),
+2025-04-27 10:30:09,125 INFO 	              (23, 0.05362956792881157),
+2025-04-27 10:30:09,125 INFO 	              (24, 0.04926378492971945),
+2025-04-27 10:30:09,125 INFO 	              (25, 0.05229379111186165),
+2025-04-27 10:30:09,125 INFO 	              (26, 0.054503215199598595),
+2025-04-27 10:30:09,126 INFO 	              (27, 0.05230705004370201),
+2025-04-27 10:30:09,126 INFO 	              (28, 0.05318958305007884),
+2025-04-27 10:30:09,126 INFO 	              (29, 0.05381830059955323),
+2025-04-27 10:30:09,126 INFO 	              (30, 0.04847312713231882),
+2025-04-27 10:30:09,126 INFO 	              (31, 0.05252172010756225),
+2025-04-27 10:30:09,126 INFO 	              (32, 0.051921042278299204),
+2025-04-27 10:30:09,126 INFO 	              (33, 0.051396633668425),
+2025-04-27 10:30:09,127 INFO 	              (34, 0.05493234369105827),
+2025-04-27 10:30:09,127 INFO 	              (35, 0.05194152453731274),
+2025-04-27 10:30:09,127 INFO 	              (36, 0.05556909077076457),
+2025-04-27 10:30:09,127 INFO 	              (37, 0.05582040396622732),
+2025-04-27 10:30:09,127 INFO 	              (38, 0.055567255009267603),
+2025-04-27 10:30:09,128 INFO 	              (39, 0.05426650833928567),
+2025-04-27 10:30:09,128 INFO 	              (40, 0.056576979638708176),
+2025-04-27 10:30:09,128 INFO 	              (41, 0.054866342131668966),
+2025-04-27 10:30:09,128 INFO 	              (42, 0.05933197349665123),
+2025-04-27 10:30:09,128 INFO 	              (43, 0.048330179694207415),
+2025-04-27 10:30:09,128 INFO 	              (44, 0.05572551282617935),
+2025-04-27 10:30:09,128 INFO 	              (45, 0.05482729290329551),
+2025-04-27 10:30:09,129 INFO 	              (46, 0.05570807142784221),
+2025-04-27 10:30:09,129 INFO 	              (47, 0.05412562981827284),
+2025-04-27 10:30:09,129 INFO 	              (48, 0.05486781515144389),
+2025-04-27 10:30:09,129 INFO 	              (49, 0.05788659617089678),
+2025-04-27 10:30:09,129 INFO 	              (50, 0.05594462391706059)],
+2025-04-27 10:30:09,129 INFO 	 'loss': [(1, 4.512608245015144),
+2025-04-27 10:30:09,129 INFO 	          (2, 4.429506954550743),
+2025-04-27 10:30:09,130 INFO 	          (3, 4.340906253457069),
+2025-04-27 10:30:09,130 INFO 	          (4, 4.308404820412397),
+2025-04-27 10:30:09,130 INFO 	          (5, 4.268475816398859),
+2025-04-27 10:30:09,130 INFO 	          (6, 4.203265366454919),
+2025-04-27 10:30:09,130 INFO 	          (7, 4.2194426819682125),
+2025-04-27 10:30:09,130 INFO 	          (8, 4.226912113279104),
+2025-04-27 10:30:09,131 INFO 	          (9, 4.155967088788747),
+2025-04-27 10:30:09,131 INFO 	          (10, 4.148697281628847),
+2025-04-27 10:30:09,131 INFO 	          (11, 4.1052431501448154),
+2025-04-27 10:30:09,131 INFO 	          (12, 4.134655281156301),
+2025-04-27 10:30:09,131 INFO 	          (13, 4.137156284600496),
+2025-04-27 10:30:09,131 INFO 	          (14, 4.108903942257166),
+2025-04-27 10:30:09,131 INFO 	          (15, 4.120075971633196),
+2025-04-27 10:30:09,131 INFO 	          (16, 4.133726535737514),
+2025-04-27 10:30:09,132 INFO 	          (17, 4.099088030308485),
+2025-04-27 10:30:09,132 INFO 	          (18, 4.108834099024534),
+2025-04-27 10:30:09,132 INFO 	          (19, 4.096314981579781),
+2025-04-27 10:30:09,132 INFO 	          (20, 4.12145504951477),
+2025-04-27 10:30:09,132 INFO 	          (21, 4.085329145938158),
+2025-04-27 10:30:09,132 INFO 	          (22, 4.104279752075672),
+2025-04-27 10:30:09,132 INFO 	          (23, 4.093789691478014),
+2025-04-27 10:30:09,132 INFO 	          (24, 4.179550752788782),
+2025-04-27 10:30:09,133 INFO 	          (25, 4.123024823516607),
+2025-04-27 10:30:09,133 INFO 	          (26, 4.090338459610939),
+2025-04-27 10:30:09,133 INFO 	          (27, 4.10250111296773),
+2025-04-27 10:30:09,133 INFO 	          (28, 4.137964803725481),
+2025-04-27 10:30:09,133 INFO 	          (29, 4.0980031222105024),
+2025-04-27 10:30:09,133 INFO 	          (30, 4.155534849315882),
+2025-04-27 10:30:09,133 INFO 	          (31, 4.153812862187624),
+2025-04-27 10:30:09,133 INFO 	          (32, 4.12280458509922),
+2025-04-27 10:30:09,133 INFO 	          (33, 4.123828884214163),
+2025-04-27 10:30:09,134 INFO 	          (34, 4.101566106826067),
+2025-04-27 10:30:09,134 INFO 	          (35, 4.155715433508158),
+2025-04-27 10:30:09,134 INFO 	          (36, 4.13385569229722),
+2025-04-27 10:30:09,134 INFO 	          (37, 4.123001723736524),
+2025-04-27 10:30:09,134 INFO 	          (38, 4.118993002921343),
+2025-04-27 10:30:09,134 INFO 	          (39, 4.130560812354088),
+2025-04-27 10:30:09,134 INFO 	          (40, 4.151362016797066),
+2025-04-27 10:30:09,134 INFO 	          (41, 4.146920440346003),
+2025-04-27 10:30:09,135 INFO 	          (42, 4.1647218556867704),
+2025-04-27 10:30:09,135 INFO 	          (43, 4.218359053134918),
+2025-04-27 10:30:09,135 INFO 	          (44, 4.169130273908377),
+2025-04-27 10:30:09,135 INFO 	          (45, 4.170900890231133),
+2025-04-27 10:30:09,135 INFO 	          (46, 4.170245225727558),
+2025-04-27 10:30:09,135 INFO 	          (47, 4.166438678652048),
+2025-04-27 10:30:09,135 INFO 	          (48, 4.196580913662911),
+2025-04-27 10:30:09,136 INFO 	          (49, 4.182356025278568),
+2025-04-27 10:30:09,136 INFO 	          (50, 4.175643803179264)],
+2025-04-27 10:30:09,136 INFO 	 'num_clients': [(1, 10),
+2025-04-27 10:30:09,136 INFO 	                 (2, 10),
+2025-04-27 10:30:09,136 INFO 	                 (3, 10),
+2025-04-27 10:30:09,136 INFO 	                 (4, 10),
+2025-04-27 10:30:09,136 INFO 	                 (5, 10),
+2025-04-27 10:30:09,137 INFO 	                 (6, 9),
+2025-04-27 10:30:09,137 INFO 	                 (7, 10),
+2025-04-27 10:30:09,137 INFO 	                 (8, 10),
+2025-04-27 10:30:09,137 INFO 	                 (9, 10),
+2025-04-27 10:30:09,137 INFO 	                 (10, 10),
+2025-04-27 10:30:09,137 INFO 	                 (11, 10),
+2025-04-27 10:30:09,137 INFO 	                 (12, 10),
+2025-04-27 10:30:09,137 INFO 	                 (13, 10),
+2025-04-27 10:30:09,138 INFO 	                 (14, 10),
+2025-04-27 10:30:09,138 INFO 	                 (15, 10),
+2025-04-27 10:30:09,138 INFO 	                 (16, 10),
+2025-04-27 10:30:09,138 INFO 	                 (17, 10),
+2025-04-27 10:30:09,138 INFO 	                 (18, 10),
+2025-04-27 10:30:09,138 INFO 	                 (19, 10),
+2025-04-27 10:30:09,138 INFO 	                 (20, 10),
+2025-04-27 10:30:09,139 INFO 	                 (21, 10),
+2025-04-27 10:30:09,139 INFO 	                 (22, 10),
+2025-04-27 10:30:09,139 INFO 	                 (23, 10),
+2025-04-27 10:30:09,139 INFO 	                 (24, 10),
+2025-04-27 10:30:09,139 INFO 	                 (25, 10),
+2025-04-27 10:30:09,139 INFO 	                 (26, 10),
+2025-04-27 10:30:09,139 INFO 	                 (27, 10),
+2025-04-27 10:30:09,140 INFO 	                 (28, 10),
+2025-04-27 10:30:09,140 INFO 	                 (29, 10),
+2025-04-27 10:30:09,140 INFO 	                 (30, 10),
+2025-04-27 10:30:09,141 INFO 	                 (31, 10),
+2025-04-27 10:30:09,141 INFO 	                 (32, 10),
+2025-04-27 10:30:09,141 INFO 	                 (33, 10),
+2025-04-27 10:30:09,141 INFO 	                 (34, 10),
+2025-04-27 10:30:09,141 INFO 	                 (35, 10),
+2025-04-27 10:30:09,141 INFO 	                 (36, 10),
+2025-04-27 10:30:09,141 INFO 	                 (37, 10),
+2025-04-27 10:30:09,142 INFO 	                 (38, 10),
+2025-04-27 10:30:09,142 INFO 	                 (39, 10),
+2025-04-27 10:30:09,142 INFO 	                 (40, 10),
+2025-04-27 10:30:09,142 INFO 	                 (41, 10),
+2025-04-27 10:30:09,142 INFO 	                 (42, 9),
+2025-04-27 10:30:09,142 INFO 	                 (43, 10),
+2025-04-27 10:30:09,143 INFO 	                 (44, 10),
+2025-04-27 10:30:09,143 INFO 	                 (45, 10),
+2025-04-27 10:30:09,143 INFO 	                 (46, 10),
+2025-04-27 10:30:09,143 INFO 	                 (47, 10),
+2025-04-27 10:30:09,143 INFO 	                 (48, 10),
+2025-04-27 10:30:09,143 INFO 	                 (49, 10),
+2025-04-27 10:30:09,143 INFO 	                 (50, 10)],
+2025-04-27 10:30:09,143 INFO 	 'precision': [(1, 0.0034775257484399935),
+2025-04-27 10:30:09,144 INFO 	               (2, 0.003975763002474686),
+2025-04-27 10:30:09,144 INFO 	               (3, 0.01156235091490328),
+2025-04-27 10:30:09,144 INFO 	               (4, 0.016476871179859184),
+2025-04-27 10:30:09,144 INFO 	               (5, 0.01947470935389461),
+2025-04-27 10:30:09,144 INFO 	               (6, 0.02561207521929213),
+2025-04-27 10:30:09,144 INFO 	               (7, 0.03461025543453854),
+2025-04-27 10:30:09,144 INFO 	               (8, 0.026418251958629842),
+2025-04-27 10:30:09,144 INFO 	               (9, 0.04178991165932767),
+2025-04-27 10:30:09,145 INFO 	               (10, 0.04100105428440401),
+2025-04-27 10:30:09,145 INFO 	               (11, 0.04689293218949375),
+2025-04-27 10:30:09,145 INFO 	               (12, 0.0469073841706186),
+2025-04-27 10:30:09,145 INFO 	               (13, 0.04869216737617089),
+2025-04-27 10:30:09,145 INFO 	               (14, 0.055447574817085885),
+2025-04-27 10:30:09,145 INFO 	               (15, 0.051974786259460344),
+2025-04-27 10:30:09,145 INFO 	               (16, 0.04681023084525834),
+2025-04-27 10:30:09,145 INFO 	               (17, 0.050525644983467635),
+2025-04-27 10:30:09,146 INFO 	               (18, 0.05968628056797712),
+2025-04-27 10:30:09,146 INFO 	               (19, 0.06327614287390358),
+2025-04-27 10:30:09,146 INFO 	               (20, 0.05712707832111596),
+2025-04-27 10:30:09,146 INFO 	               (21, 0.06061872556640156),
+2025-04-27 10:30:09,146 INFO 	               (22, 0.07029905384279769),
+2025-04-27 10:30:09,146 INFO 	               (23, 0.06548274694969147),
+2025-04-27 10:30:09,146 INFO 	               (24, 0.06288530572627797),
+2025-04-27 10:30:09,146 INFO 	               (25, 0.06700300757404679),
+2025-04-27 10:30:09,147 INFO 	               (26, 0.06159259995569332),
+2025-04-27 10:30:09,147 INFO 	               (27, 0.0623527601224323),
+2025-04-27 10:30:09,147 INFO 	               (28, 0.06532719597727718),
+2025-04-27 10:30:09,147 INFO 	               (29, 0.06521994470140183),
+2025-04-27 10:30:09,147 INFO 	               (30, 0.0617769283976766),
+2025-04-27 10:30:09,147 INFO 	               (31, 0.06460236975526086),
+2025-04-27 10:30:09,147 INFO 	               (32, 0.06495815943121268),
+2025-04-27 10:30:09,147 INFO 	               (33, 0.06566972343498914),
+2025-04-27 10:30:09,148 INFO 	               (34, 0.06770521845258382),
+2025-04-27 10:30:09,148 INFO 	               (35, 0.0621009494854271),
+2025-04-27 10:30:09,148 INFO 	               (36, 0.071304088822019),
+2025-04-27 10:30:09,148 INFO 	               (37, 0.0667564856652659),
+2025-04-27 10:30:09,148 INFO 	               (38, 0.07197113582781281),
+2025-04-27 10:30:09,148 INFO 	               (39, 0.07295697005468908),
+2025-04-27 10:30:09,148 INFO 	               (40, 0.0695461509352648),
+2025-04-27 10:30:09,148 INFO 	               (41, 0.06459612985447646),
+2025-04-27 10:30:09,149 INFO 	               (42, 0.07743879174560289),
+2025-04-27 10:30:09,149 INFO 	               (43, 0.05901741040509678),
+2025-04-27 10:30:09,149 INFO 	               (44, 0.0701581188593584),
+2025-04-27 10:30:09,149 INFO 	               (45, 0.0677602772676543),
+2025-04-27 10:30:09,149 INFO 	               (46, 0.06807747087901098),
+2025-04-27 10:30:09,149 INFO 	               (47, 0.06590459160350969),
+2025-04-27 10:30:09,149 INFO 	               (48, 0.0723869687089607),
+2025-04-27 10:30:09,149 INFO 	               (49, 0.0701022451376882),
+2025-04-27 10:30:09,149 INFO 	               (50, 0.06656567690597757)],
+2025-04-27 10:30:09,150 INFO 	 'recall': [(1, 0.025589922822275762),
+2025-04-27 10:30:09,150 INFO 	            (2, 0.028947512862954033),
+2025-04-27 10:30:09,150 INFO 	            (3, 0.037637570762570766),
+2025-04-27 10:30:09,150 INFO 	            (4, 0.04134995323304146),
+2025-04-27 10:30:09,150 INFO 	            (5, 0.046171219118858436),
+2025-04-27 10:30:09,150 INFO 	            (6, 0.05343357659043933),
+2025-04-27 10:30:09,150 INFO 	            (7, 0.05459349612805495),
+2025-04-27 10:30:09,150 INFO 	            (8, 0.05021574983324208),
+2025-04-27 10:30:09,151 INFO 	            (9, 0.060352762433644784),
+2025-04-27 10:30:09,151 INFO 	            (10, 0.06006121890665234),
+2025-04-27 10:30:09,151 INFO 	            (11, 0.06381574381500853),
+2025-04-27 10:30:09,151 INFO 	            (12, 0.06491720322161498),
+2025-04-27 10:30:09,151 INFO 	            (13, 0.06703684360874763),
+2025-04-27 10:30:09,151 INFO 	            (14, 0.07432023954287886),
+2025-04-27 10:30:09,151 INFO 	            (15, 0.07054485065158439),
+2025-04-27 10:30:09,151 INFO 	            (16, 0.06468008847447702),
+2025-04-27 10:30:09,152 INFO 	            (17, 0.06936156425274072),
+2025-04-27 10:30:09,152 INFO 	            (18, 0.07079879280935784),
+2025-04-27 10:30:09,152 INFO 	            (19, 0.07287528110864025),
+2025-04-27 10:30:09,152 INFO 	            (20, 0.07010288689638534),
+2025-04-27 10:30:09,152 INFO 	            (21, 0.07436653976828124),
+2025-04-27 10:30:09,152 INFO 	            (22, 0.0750752221978228),
+2025-04-27 10:30:09,152 INFO 	            (23, 0.07846711433561278),
+2025-04-27 10:30:09,152 INFO 	            (24, 0.07084479682684017),
+2025-04-27 10:30:09,153 INFO 	            (25, 0.07481733072139418),
+2025-04-27 10:30:09,153 INFO 	            (26, 0.08263450299700299),
+2025-04-27 10:30:09,153 INFO 	            (27, 0.07450428621516084),
+2025-04-27 10:30:09,153 INFO 	            (28, 0.0761998169271389),
+2025-04-27 10:30:09,153 INFO 	            (29, 0.07692390915328222),
+2025-04-27 10:30:09,153 INFO 	            (30, 0.06808828057047871),
+2025-04-27 10:30:09,153 INFO 	            (31, 0.07383075237456041),
+2025-04-27 10:30:09,153 INFO 	            (32, 0.07504897157366199),
+2025-04-27 10:30:09,154 INFO 	            (33, 0.07288815816106838),
+2025-04-27 10:30:09,154 INFO 	            (34, 0.07778942709337446),
+2025-04-27 10:30:09,154 INFO 	            (35, 0.07174616147526364),
+2025-04-27 10:30:09,154 INFO 	            (36, 0.07744782586694351),
+2025-04-27 10:30:09,154 INFO 	            (37, 0.07777969830307292),
+2025-04-27 10:30:09,154 INFO 	            (38, 0.07444644276432202),
+2025-04-27 10:30:09,155 INFO 	            (39, 0.07292361721096241),
+2025-04-27 10:30:09,155 INFO 	            (40, 0.07565460264279923),
+2025-04-27 10:30:09,155 INFO 	            (41, 0.0748573851372226),
+2025-04-27 10:30:09,155 INFO 	            (42, 0.07750624531700381),
+2025-04-27 10:30:09,155 INFO 	            (43, 0.06603307835525325),
+2025-04-27 10:30:09,155 INFO 	            (44, 0.07663160122041698),
+2025-04-27 10:30:09,155 INFO 	            (45, 0.07582995005080918),
+2025-04-27 10:30:09,155 INFO 	            (46, 0.0788531940453767),
+2025-04-27 10:30:09,155 INFO 	            (47, 0.07411878892950874),
+2025-04-27 10:30:09,156 INFO 	            (48, 0.07318411569940207),
+2025-04-27 10:30:09,156 INFO 	            (49, 0.07699358531045837),
+2025-04-27 10:30:09,156 INFO 	            (50, 0.07456011539200393)],
+2025-04-27 10:30:09,156 INFO 	 'total_examples': [(1, 1250),
+2025-04-27 10:30:09,156 INFO 	                    (2, 1250),
+2025-04-27 10:30:09,156 INFO 	                    (3, 1250),
+2025-04-27 10:30:09,156 INFO 	                    (4, 1250),
+2025-04-27 10:30:09,156 INFO 	                    (5, 1250),
+2025-04-27 10:30:09,157 INFO 	                    (6, 1125),
+2025-04-27 10:30:09,157 INFO 	                    (7, 1250),
+2025-04-27 10:30:09,157 INFO 	                    (8, 1250),
+2025-04-27 10:30:09,157 INFO 	                    (9, 1250),
+2025-04-27 10:30:09,157 INFO 	                    (10, 1250),
+2025-04-27 10:30:09,157 INFO 	                    (11, 1250),
+2025-04-27 10:30:09,157 INFO 	                    (12, 1250),
+2025-04-27 10:30:09,157 INFO 	                    (13, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (14, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (15, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (16, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (17, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (18, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (19, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (20, 1250),
+2025-04-27 10:30:09,158 INFO 	                    (21, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (22, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (23, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (24, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (25, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (26, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (27, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (28, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (29, 1250),
+2025-04-27 10:30:09,159 INFO 	                    (30, 1250),
+2025-04-27 10:30:09,160 INFO 	                    (31, 1250),
+2025-04-27 10:30:09,160 INFO 	                    (32, 1250),
+2025-04-27 10:30:09,160 INFO 	                    (33, 1250),
+2025-04-27 10:30:09,160 INFO 	                    (34, 1250),
+2025-04-27 10:30:09,160 INFO 	                    (35, 1250),
+2025-04-27 10:30:09,160 INFO 	                    (36, 1250),
+2025-04-27 10:30:09,161 INFO 	                    (37, 1250),
+2025-04-27 10:30:09,161 INFO 	                    (38, 1250),
+2025-04-27 10:30:09,161 INFO 	                    (39, 1250),
+2025-04-27 10:30:09,161 INFO 	                    (40, 1250),
+2025-04-27 10:30:09,162 INFO 	                    (41, 1250),
+2025-04-27 10:30:09,162 INFO 	                    (42, 1125),
+2025-04-27 10:30:09,162 INFO 	                    (43, 1250),
+2025-04-27 10:30:09,162 INFO 	                    (44, 1250),
+2025-04-27 10:30:09,162 INFO 	                    (45, 1250),
+2025-04-27 10:30:09,162 INFO 	                    (46, 1250),
+2025-04-27 10:30:09,162 INFO 	                    (47, 1250),
+2025-04-27 10:30:09,163 INFO 	                    (48, 1250),
+2025-04-27 10:30:09,163 INFO 	                    (49, 1250),
+2025-04-27 10:30:09,163 INFO 	                    (50, 1250)]}
+2025-04-27 10:30:09,163 INFO 	History (metrics, distributed, evaluate):
+2025-04-27 10:30:09,163 INFO 	{'accuracy': [(1, 0.0101),
+2025-04-27 10:30:09,163 INFO 	              (2, 0.009899999999999999),
+2025-04-27 10:30:09,163 INFO 	              (3, 0.0249),
+2025-04-27 10:30:09,164 INFO 	              (4, 0.0316),
+2025-04-27 10:30:09,164 INFO 	              (5, 0.03849999999999999),
+2025-04-27 10:30:09,164 INFO 	              (6, 0.0534),
+2025-04-27 10:30:09,164 INFO 	              (7, 0.057100000000000005),
+2025-04-27 10:30:09,164 INFO 	              (8, 0.060899999999999996),
+2025-04-27 10:30:09,165 INFO 	              (9, 0.07399999999999998),
+2025-04-27 10:30:09,165 INFO 	              (10, 0.07919999999999999),
+2025-04-27 10:30:09,165 INFO 	              (11, 0.08009999999999998),
+2025-04-27 10:30:09,165 INFO 	              (12, 0.0847),
+2025-04-27 10:30:09,165 INFO 	              (13, 0.0964),
+2025-04-27 10:30:09,165 INFO 	              (14, 0.10729999999999999),
+2025-04-27 10:30:09,166 INFO 	              (15, 0.09089999999999998),
+2025-04-27 10:30:09,166 INFO 	              (16, 0.09199999999999998),
+2025-04-27 10:30:09,166 INFO 	              (17, 0.10189999999999999),
+2025-04-27 10:30:09,166 INFO 	              (18, 0.1041),
+2025-04-27 10:30:09,166 INFO 	              (19, 0.10540000000000001),
+2025-04-27 10:30:09,166 INFO 	              (20, 0.1079),
+2025-04-27 10:30:09,166 INFO 	              (21, 0.1075),
+2025-04-27 10:30:09,167 INFO 	              (22, 0.1109),
+2025-04-27 10:30:09,167 INFO 	              (23, 0.11590000000000003),
+2025-04-27 10:30:09,167 INFO 	              (24, 0.1031),
+2025-04-27 10:30:09,167 INFO 	              (25, 0.11040000000000001),
+2025-04-27 10:30:09,167 INFO 	              (26, 0.11300000000000002),
+2025-04-27 10:30:09,167 INFO 	              (27, 0.11460000000000001),
+2025-04-27 10:30:09,168 INFO 	              (28, 0.1111),
+2025-04-27 10:30:09,168 INFO 	              (29, 0.11750000000000001),
+2025-04-27 10:30:09,168 INFO 	              (30, 0.1157),
+2025-04-27 10:30:09,168 INFO 	              (31, 0.11579999999999999),
+2025-04-27 10:30:09,168 INFO 	              (32, 0.11639999999999999),
+2025-04-27 10:30:09,168 INFO 	              (33, 0.12090000000000001),
+2025-04-27 10:30:09,169 INFO 	              (34, 0.1167),
+2025-04-27 10:30:09,169 INFO 	              (35, 0.11750000000000001),
+2025-04-27 10:30:09,169 INFO 	              (36, 0.1169),
+2025-04-27 10:30:09,169 INFO 	              (37, 0.11949999999999998),
+2025-04-27 10:30:09,169 INFO 	              (38, 0.11699999999999999),
+2025-04-27 10:30:09,169 INFO 	              (39, 0.1123),
+2025-04-27 10:30:09,170 INFO 	              (40, 0.11910000000000001),
+2025-04-27 10:30:09,170 INFO 	              (41, 0.11379999999999998),
+2025-04-27 10:30:09,170 INFO 	              (42, 0.122),
+2025-04-27 10:30:09,170 INFO 	              (43, 0.11839999999999999),
+2025-04-27 10:30:09,170 INFO 	              (44, 0.11950000000000001),
+2025-04-27 10:30:09,170 INFO 	              (45, 0.11779999999999999),
+2025-04-27 10:30:09,170 INFO 	              (46, 0.11600000000000002),
+2025-04-27 10:30:09,171 INFO 	              (47, 0.12277777777777778),
+2025-04-27 10:30:09,171 INFO 	              (48, 0.12),
+2025-04-27 10:30:09,171 INFO 	              (49, 0.1186),
+2025-04-27 10:30:09,171 INFO 	              (50, 0.11629999999999999)],
+2025-04-27 10:30:09,171 INFO 	 'f1_score': [(1, 0.001308644756542301),
+2025-04-27 10:30:09,171 INFO 	              (2, 0.001503610297107041),
+2025-04-27 10:30:09,172 INFO 	              (3, 0.0076912668451724064),
+2025-04-27 10:30:09,172 INFO 	              (4, 0.013573833724151014),
+2025-04-27 10:30:09,172 INFO 	              (5, 0.017366043818447974),
+2025-04-27 10:30:09,172 INFO 	              (6, 0.02817025854166959),
+2025-04-27 10:30:09,172 INFO 	              (7, 0.03670897717958214),
+2025-04-27 10:30:09,172 INFO 	              (8, 0.041547848300430304),
+2025-04-27 10:30:09,172 INFO 	              (9, 0.05244320613598715),
+2025-04-27 10:30:09,173 INFO 	              (10, 0.05682264707194771),
+2025-04-27 10:30:09,173 INFO 	              (11, 0.061664907549963),
+2025-04-27 10:30:09,173 INFO 	              (12, 0.06398426823790074),
+2025-04-27 10:30:09,173 INFO 	              (13, 0.07466115929974468),
+2025-04-27 10:30:09,173 INFO 	              (14, 0.08699749123552683),
+2025-04-27 10:30:09,173 INFO 	              (15, 0.074685280233492),
+2025-04-27 10:30:09,173 INFO 	              (16, 0.07698587676590217),
+2025-04-27 10:30:09,174 INFO 	              (17, 0.08607718086991786),
+2025-04-27 10:30:09,174 INFO 	              (18, 0.08799275222411294),
+2025-04-27 10:30:09,174 INFO 	              (19, 0.08724415067903776),
+2025-04-27 10:30:09,174 INFO 	              (20, 0.08960224871753007),
+2025-04-27 10:30:09,174 INFO 	              (21, 0.08970926898206728),
+2025-04-27 10:30:09,174 INFO 	              (22, 0.09751704454044682),
+2025-04-27 10:30:09,175 INFO 	              (23, 0.09980788851992256),
+2025-04-27 10:30:09,175 INFO 	              (24, 0.08643028117702335),
+2025-04-27 10:30:09,175 INFO 	              (25, 0.093317184244517),
+2025-04-27 10:30:09,175 INFO 	              (26, 0.0940179798154885),
+2025-04-27 10:30:09,175 INFO 	              (27, 0.09820708355944217),
+2025-04-27 10:30:09,175 INFO 	              (28, 0.09873548522269104),
+2025-04-27 10:30:09,175 INFO 	              (29, 0.10026866559650331),
+2025-04-27 10:30:09,176 INFO 	              (30, 0.09726528912073493),
+2025-04-27 10:30:09,176 INFO 	              (31, 0.10035873745921671),
+2025-04-27 10:30:09,176 INFO 	              (32, 0.10111923853248676),
+2025-04-27 10:30:09,176 INFO 	              (33, 0.10312102197043163),
+2025-04-27 10:30:09,176 INFO 	              (34, 0.10045031891359349),
+2025-04-27 10:30:09,176 INFO 	              (35, 0.1014614468599396),
+2025-04-27 10:30:09,177 INFO 	              (36, 0.09865505244892628),
+2025-04-27 10:30:09,177 INFO 	              (37, 0.10390326105667332),
+2025-04-27 10:30:09,177 INFO 	              (38, 0.0988631651441845),
+2025-04-27 10:30:09,177 INFO 	              (39, 0.09869583779740607),
+2025-04-27 10:30:09,177 INFO 	              (40, 0.10055578052222176),
+2025-04-27 10:30:09,177 INFO 	              (41, 0.09532032087157914),
+2025-04-27 10:30:09,178 INFO 	              (42, 0.10543310692846246),
+2025-04-27 10:30:09,178 INFO 	              (43, 0.10089721593610974),
+2025-04-27 10:30:09,178 INFO 	              (44, 0.10423763665435863),
+2025-04-27 10:30:09,178 INFO 	              (45, 0.10062836328176634),
+2025-04-27 10:30:09,178 INFO 	              (46, 0.09612633308382772),
+2025-04-27 10:30:09,178 INFO 	              (47, 0.10647471474966015),
+2025-04-27 10:30:09,178 INFO 	              (48, 0.10495455156465697),
+2025-04-27 10:30:09,178 INFO 	              (49, 0.09970126435998317),
+2025-04-27 10:30:09,179 INFO 	              (50, 0.09801889003888355)],
+2025-04-27 10:30:09,179 INFO 	 'loss': [(1, 4.596946389973164),
+2025-04-27 10:30:09,179 INFO 	          (2, 4.589644412696361),
+2025-04-27 10:30:09,179 INFO 	          (3, 4.549675606191158),
+2025-04-27 10:30:09,179 INFO 	          (4, 4.4481011018157),
+2025-04-27 10:30:09,179 INFO 	          (5, 4.348635566979647),
+2025-04-27 10:30:09,179 INFO 	          (6, 4.227510592341423),
+2025-04-27 10:30:09,180 INFO 	          (7, 4.196225344389677),
+2025-04-27 10:30:09,180 INFO 	          (8, 4.18292608782649),
+2025-04-27 10:30:09,180 INFO 	          (9, 4.091799188405275),
+2025-04-27 10:30:09,180 INFO 	          (10, 4.085815767943859),
+2025-04-27 10:30:09,180 INFO 	          (11, 4.058754034340382),
+2025-04-27 10:30:09,180 INFO 	          (12, 4.018406300246715),
+2025-04-27 10:30:09,181 INFO 	          (13, 3.9596869848668574),
+2025-04-27 10:30:09,181 INFO 	          (14, 3.9403045147657396),
+2025-04-27 10:30:09,181 INFO 	          (15, 3.9989244610071184),
+2025-04-27 10:30:09,181 INFO 	          (16, 4.001513209193945),
+2025-04-27 10:30:09,181 INFO 	          (17, 3.9433398552238943),
+2025-04-27 10:30:09,181 INFO 	          (18, 3.9311303555965424),
+2025-04-27 10:30:09,181 INFO 	          (19, 3.92759046331048),
+2025-04-27 10:30:09,182 INFO 	          (20, 3.9119109727442263),
+2025-04-27 10:30:09,182 INFO 	          (21, 3.913287115097046),
+2025-04-27 10:30:09,182 INFO 	          (22, 3.9208642870187758),
+2025-04-27 10:30:09,182 INFO 	          (23, 3.8710037745535373),
+2025-04-27 10:30:09,182 INFO 	          (24, 3.933564965426922),
+2025-04-27 10:30:09,182 INFO 	          (25, 3.9106634385883807),
+2025-04-27 10:30:09,182 INFO 	          (26, 3.896257056295872),
+2025-04-27 10:30:09,183 INFO 	          (27, 3.9120253942906857),
+2025-04-27 10:30:09,183 INFO 	          (28, 3.8981023423373697),
+2025-04-27 10:30:09,183 INFO 	          (29, 3.8830885641276836),
+2025-04-27 10:30:09,183 INFO 	          (30, 3.9122146524488928),
+2025-04-27 10:30:09,183 INFO 	          (31, 3.9016540691256525),
+2025-04-27 10:30:09,183 INFO 	          (32, 3.878947898745537),
+2025-04-27 10:30:09,183 INFO 	          (33, 3.866327863931656),
+2025-04-27 10:30:09,184 INFO 	          (34, 3.8954213961958883),
+2025-04-27 10:30:09,184 INFO 	          (35, 3.9014770582318308),
+2025-04-27 10:30:09,184 INFO 	          (36, 3.884260284900665),
+2025-04-27 10:30:09,184 INFO 	          (37, 3.8775025755167007),
+2025-04-27 10:30:09,184 INFO 	          (38, 3.878213822096586),
+2025-04-27 10:30:09,184 INFO 	          (39, 3.9036466754972934),
+2025-04-27 10:30:09,184 INFO 	          (40, 3.8773134648799896),
+2025-04-27 10:30:09,184 INFO 	          (41, 3.8805610835552216),
+2025-04-27 10:30:09,185 INFO 	          (42, 3.849958249926567),
+2025-04-27 10:30:09,185 INFO 	          (43, 3.888373140245676),
+2025-04-27 10:30:09,185 INFO 	          (44, 3.908785788714886),
+2025-04-27 10:30:09,185 INFO 	          (45, 3.896415416151285),
+2025-04-27 10:30:09,185 INFO 	          (46, 3.881327022612095),
+2025-04-27 10:30:09,185 INFO 	          (47, 3.8671215921640396),
+2025-04-27 10:30:09,185 INFO 	          (48, 3.8788763605058194),
+2025-04-27 10:30:09,186 INFO 	          (49, 3.8885395929217337),
+2025-04-27 10:30:09,186 INFO 	          (50, 3.8935999274253845)],
+2025-04-27 10:30:09,186 INFO 	 'num_clients': [(1, 10),
+2025-04-27 10:30:09,186 INFO 	                 (2, 10),
+2025-04-27 10:30:09,186 INFO 	                 (3, 10),
+2025-04-27 10:30:09,186 INFO 	                 (4, 10),
+2025-04-27 10:30:09,186 INFO 	                 (5, 10),
+2025-04-27 10:30:09,186 INFO 	                 (6, 10),
+2025-04-27 10:30:09,187 INFO 	                 (7, 10),
+2025-04-27 10:30:09,187 INFO 	                 (8, 10),
+2025-04-27 10:30:09,187 INFO 	                 (9, 10),
+2025-04-27 10:30:09,187 INFO 	                 (10, 10),
+2025-04-27 10:30:09,187 INFO 	                 (11, 10),
+2025-04-27 10:30:09,187 INFO 	                 (12, 10),
+2025-04-27 10:30:09,187 INFO 	                 (13, 10),
+2025-04-27 10:30:09,187 INFO 	                 (14, 10),
+2025-04-27 10:30:09,188 INFO 	                 (15, 10),
+2025-04-27 10:30:09,188 INFO 	                 (16, 10),
+2025-04-27 10:30:09,188 INFO 	                 (17, 10),
+2025-04-27 10:30:09,188 INFO 	                 (18, 10),
+2025-04-27 10:30:09,188 INFO 	                 (19, 10),
+2025-04-27 10:30:09,188 INFO 	                 (20, 10),
+2025-04-27 10:30:09,188 INFO 	                 (21, 10),
+2025-04-27 10:30:09,189 INFO 	                 (22, 10),
+2025-04-27 10:30:09,189 INFO 	                 (23, 10),
+2025-04-27 10:30:09,189 INFO 	                 (24, 10),
+2025-04-27 10:30:09,189 INFO 	                 (25, 10),
+2025-04-27 10:30:09,189 INFO 	                 (26, 10),
+2025-04-27 10:30:09,189 INFO 	                 (27, 10),
+2025-04-27 10:30:09,189 INFO 	                 (28, 10),
+2025-04-27 10:30:09,190 INFO 	                 (29, 10),
+2025-04-27 10:30:09,190 INFO 	                 (30, 10),
+2025-04-27 10:30:09,190 INFO 	                 (31, 10),
+2025-04-27 10:30:09,190 INFO 	                 (32, 10),
+2025-04-27 10:30:09,190 INFO 	                 (33, 10),
+2025-04-27 10:30:09,190 INFO 	                 (34, 10),
+2025-04-27 10:30:09,190 INFO 	                 (35, 10),
+2025-04-27 10:30:09,190 INFO 	                 (36, 10),
+2025-04-27 10:30:09,191 INFO 	                 (37, 10),
+2025-04-27 10:30:09,191 INFO 	                 (38, 10),
+2025-04-27 10:30:09,191 INFO 	                 (39, 10),
+2025-04-27 10:30:09,191 INFO 	                 (40, 10),
+2025-04-27 10:30:09,191 INFO 	                 (41, 10),
+2025-04-27 10:30:09,191 INFO 	                 (42, 10),
+2025-04-27 10:30:09,191 INFO 	                 (43, 10),
+2025-04-27 10:30:09,191 INFO 	                 (44, 10),
+2025-04-27 10:30:09,192 INFO 	                 (45, 10),
+2025-04-27 10:30:09,192 INFO 	                 (46, 10),
+2025-04-27 10:30:09,192 INFO 	                 (47, 9),
+2025-04-27 10:30:09,192 INFO 	                 (48, 10),
+2025-04-27 10:30:09,192 INFO 	                 (49, 10),
+2025-04-27 10:30:09,192 INFO 	                 (50, 10)],
+2025-04-27 10:30:09,192 INFO 	 'precision': [(1, 0.002266952504660742),
+2025-04-27 10:30:09,192 INFO 	               (2, 0.0023746552168818135),
+2025-04-27 10:30:09,193 INFO 	               (3, 0.006213039973248893),
+2025-04-27 10:30:09,193 INFO 	               (4, 0.01755326690564862),
+2025-04-27 10:30:09,193 INFO 	               (5, 0.022691928603496857),
+2025-04-27 10:30:09,193 INFO 	               (6, 0.031935181940483504),
+2025-04-27 10:30:09,193 INFO 	               (7, 0.042779934320413805),
+2025-04-27 10:30:09,193 INFO 	               (8, 0.05493745221646118),
+2025-04-27 10:30:09,193 INFO 	               (9, 0.0705178889133778),
+2025-04-27 10:30:09,193 INFO 	               (10, 0.07013825924395851),
+2025-04-27 10:30:09,193 INFO 	               (11, 0.0844190543098386),
+2025-04-27 10:30:09,194 INFO 	               (12, 0.08324703261828062),
+2025-04-27 10:30:09,194 INFO 	               (13, 0.09461926122810442),
+2025-04-27 10:30:09,194 INFO 	               (14, 0.10263321558885781),
+2025-04-27 10:30:09,194 INFO 	               (15, 0.10519299959807638),
+2025-04-27 10:30:09,194 INFO 	               (16, 0.11628043054314345),
+2025-04-27 10:30:09,194 INFO 	               (17, 0.11696572980836392),
+2025-04-27 10:30:09,194 INFO 	               (18, 0.12155186154795461),
+2025-04-27 10:30:09,194 INFO 	               (19, 0.10979092482201076),
+2025-04-27 10:30:09,195 INFO 	               (20, 0.11743643214988735),
+2025-04-27 10:30:09,195 INFO 	               (21, 0.1197829378030065),
+2025-04-27 10:30:09,195 INFO 	               (22, 0.13543828169076957),
+2025-04-27 10:30:09,195 INFO 	               (23, 0.13473811395408236),
+2025-04-27 10:30:09,195 INFO 	               (24, 0.11866008902847688),
+2025-04-27 10:30:09,195 INFO 	               (25, 0.13303034531136065),
+2025-04-27 10:30:09,195 INFO 	               (26, 0.12428658842381754),
+2025-04-27 10:30:09,195 INFO 	               (27, 0.13627157070359394),
+2025-04-27 10:30:09,196 INFO 	               (28, 0.13561223298455638),
+2025-04-27 10:30:09,196 INFO 	               (29, 0.1344123554899132),
+2025-04-27 10:30:09,196 INFO 	               (30, 0.13029783642735315),
+2025-04-27 10:30:09,196 INFO 	               (31, 0.1373148527121235),
+2025-04-27 10:30:09,196 INFO 	               (32, 0.13606586707688362),
+2025-04-27 10:30:09,196 INFO 	               (33, 0.1347803305791506),
+2025-04-27 10:30:09,196 INFO 	               (34, 0.13755731267695617),
+2025-04-27 10:30:09,196 INFO 	               (35, 0.14442746714270935),
+2025-04-27 10:30:09,197 INFO 	               (36, 0.12868911811485312),
+2025-04-27 10:30:09,197 INFO 	               (37, 0.13752834650067103),
+2025-04-27 10:30:09,197 INFO 	               (38, 0.12484752654800838),
+2025-04-27 10:30:09,197 INFO 	               (39, 0.13219483498467016),
+2025-04-27 10:30:09,197 INFO 	               (40, 0.12868201533976067),
+2025-04-27 10:30:09,197 INFO 	               (41, 0.12505812139976738),
+2025-04-27 10:30:09,197 INFO 	               (42, 0.13718294138850423),
+2025-04-27 10:30:09,197 INFO 	               (43, 0.13642121010678307),
+2025-04-27 10:30:09,198 INFO 	               (44, 0.13553621411877048),
+2025-04-27 10:30:09,198 INFO 	               (45, 0.13964601811170155),
+2025-04-27 10:30:09,198 INFO 	               (46, 0.12749531239792106),
+2025-04-27 10:30:09,198 INFO 	               (47, 0.13359416646830902),
+2025-04-27 10:30:09,198 INFO 	               (48, 0.1367083583479507),
+2025-04-27 10:30:09,198 INFO 	               (49, 0.1285981227823257),
+2025-04-27 10:30:09,198 INFO 	               (50, 0.12369857595088467)],
+2025-04-27 10:30:09,199 INFO 	 'recall': [(1, 0.010905627705627705),
+2025-04-27 10:30:09,199 INFO 	            (2, 0.011108939671439673),
+2025-04-27 10:30:09,199 INFO 	            (3, 0.02591997446997447),
+2025-04-27 10:30:09,199 INFO 	            (4, 0.032541264372882024),
+2025-04-27 10:30:09,199 INFO 	            (5, 0.040734105600282074),
+2025-04-27 10:30:09,199 INFO 	            (6, 0.05510591318296426),
+2025-04-27 10:30:09,199 INFO 	            (7, 0.05785471260765379),
+2025-04-27 10:30:09,199 INFO 	            (8, 0.06241676232264468),
+2025-04-27 10:30:09,200 INFO 	            (9, 0.07653234432835823),
+2025-04-27 10:30:09,200 INFO 	            (10, 0.08210132236614434),
+2025-04-27 10:30:09,200 INFO 	            (11, 0.08225730486403861),
+2025-04-27 10:30:09,200 INFO 	            (12, 0.08760884503353542),
+2025-04-27 10:30:09,200 INFO 	            (13, 0.09883369626159873),
+2025-04-27 10:30:09,200 INFO 	            (14, 0.10827291178463778),
+2025-04-27 10:30:09,200 INFO 	            (15, 0.09280802897652742),
+2025-04-27 10:30:09,200 INFO 	            (16, 0.09499088747939366),
+2025-04-27 10:30:09,201 INFO 	            (17, 0.10335001513364517),
+2025-04-27 10:30:09,201 INFO 	            (18, 0.10513222314321384),
+2025-04-27 10:30:09,201 INFO 	            (19, 0.10672861692401166),
+2025-04-27 10:30:09,201 INFO 	            (20, 0.10912038389886687),
+2025-04-27 10:30:09,201 INFO 	            (21, 0.10839076223484116),
+2025-04-27 10:30:09,201 INFO 	            (22, 0.11250723342704765),
+2025-04-27 10:30:09,201 INFO 	            (23, 0.11621057689730288),
+2025-04-27 10:30:09,201 INFO 	            (24, 0.10247691360497087),
+2025-04-27 10:30:09,202 INFO 	            (25, 0.11023145591508596),
+2025-04-27 10:30:09,202 INFO 	            (26, 0.1125247352664535),
+2025-04-27 10:30:09,202 INFO 	            (27, 0.11406250490995071),
+2025-04-27 10:30:09,202 INFO 	            (28, 0.11191086017096079),
+2025-04-27 10:30:09,202 INFO 	            (29, 0.11682671796297954),
+2025-04-27 10:30:09,202 INFO 	            (30, 0.11456558124538),
+2025-04-27 10:30:09,202 INFO 	            (31, 0.11692285844530426),
+2025-04-27 10:30:09,202 INFO 	            (32, 0.11752528182172144),
+2025-04-27 10:30:09,203 INFO 	            (33, 0.1213055674030132),
+2025-04-27 10:30:09,203 INFO 	            (34, 0.11739596318284395),
+2025-04-27 10:30:09,203 INFO 	            (35, 0.11765949078870903),
+2025-04-27 10:30:09,203 INFO 	            (36, 0.11699912327524556),
+2025-04-27 10:30:09,203 INFO 	            (37, 0.12038355377422712),
+2025-04-27 10:30:09,203 INFO 	            (38, 0.11739892610829143),
+2025-04-27 10:30:09,203 INFO 	            (39, 0.11249296460763177),
+2025-04-27 10:30:09,204 INFO 	            (40, 0.11864050452471502),
+2025-04-27 10:30:09,204 INFO 	            (41, 0.1142063527459812),
+2025-04-27 10:30:09,204 INFO 	            (42, 0.12096758651135583),
+2025-04-27 10:30:09,204 INFO 	            (43, 0.11857783049423916),
+2025-04-27 10:30:09,204 INFO 	            (44, 0.1212025659110411),
+2025-04-27 10:30:09,204 INFO 	            (45, 0.11959882216596611),
+2025-04-27 10:30:09,204 INFO 	            (46, 0.11596683864810797),
+2025-04-27 10:30:09,204 INFO 	            (47, 0.12141732089719705),
+2025-04-27 10:30:09,205 INFO 	            (48, 0.11915218171920954),
+2025-04-27 10:30:09,205 INFO 	            (49, 0.11781080264764474),
+2025-04-27 10:30:09,205 INFO 	            (50, 0.11648202899611564)],
+2025-04-27 10:30:09,205 INFO 	 'total_examples': [(1, 320),
+2025-04-27 10:30:09,205 INFO 	                    (2, 320),
+2025-04-27 10:30:09,205 INFO 	                    (3, 320),
+2025-04-27 10:30:09,205 INFO 	                    (4, 320),
+2025-04-27 10:30:09,206 INFO 	                    (5, 320),
+2025-04-27 10:30:09,206 INFO 	                    (6, 320),
+2025-04-27 10:30:09,206 INFO 	                    (7, 320),
+2025-04-27 10:30:09,206 INFO 	                    (8, 320),
+2025-04-27 10:30:09,206 INFO 	                    (9, 320),
+2025-04-27 10:30:09,206 INFO 	                    (10, 320),
+2025-04-27 10:30:09,206 INFO 	                    (11, 320),
+2025-04-27 10:30:09,206 INFO 	                    (12, 320),
+2025-04-27 10:30:09,207 INFO 	                    (13, 320),
+2025-04-27 10:30:09,207 INFO 	                    (14, 320),
+2025-04-27 10:30:09,207 INFO 	                    (15, 320),
+2025-04-27 10:30:09,207 INFO 	                    (16, 320),
+2025-04-27 10:30:09,207 INFO 	                    (17, 320),
+2025-04-27 10:30:09,207 INFO 	                    (18, 320),
+2025-04-27 10:30:09,207 INFO 	                    (19, 320),
+2025-04-27 10:30:09,207 INFO 	                    (20, 320),
+2025-04-27 10:30:09,208 INFO 	                    (21, 320),
+2025-04-27 10:30:09,208 INFO 	                    (22, 320),
+2025-04-27 10:30:09,208 INFO 	                    (23, 320),
+2025-04-27 10:30:09,208 INFO 	                    (24, 320),
+2025-04-27 10:30:09,208 INFO 	                    (25, 320),
+2025-04-27 10:30:09,208 INFO 	                    (26, 320),
+2025-04-27 10:30:09,208 INFO 	                    (27, 320),
+2025-04-27 10:30:09,208 INFO 	                    (28, 320),
+2025-04-27 10:30:09,209 INFO 	                    (29, 320),
+2025-04-27 10:30:09,209 INFO 	                    (30, 320),
+2025-04-27 10:30:09,209 INFO 	                    (31, 320),
+2025-04-27 10:30:09,209 INFO 	                    (32, 320),
+2025-04-27 10:30:09,209 INFO 	                    (33, 320),
+2025-04-27 10:30:09,209 INFO 	                    (34, 320),
+2025-04-27 10:30:09,209 INFO 	                    (35, 320),
+2025-04-27 10:30:09,209 INFO 	                    (36, 320),
+2025-04-27 10:30:09,210 INFO 	                    (37, 320),
+2025-04-27 10:30:09,210 INFO 	                    (38, 320),
+2025-04-27 10:30:09,210 INFO 	                    (39, 320),
+2025-04-27 10:30:09,210 INFO 	                    (40, 320),
+2025-04-27 10:30:09,210 INFO 	                    (41, 320),
+2025-04-27 10:30:09,210 INFO 	                    (42, 320),
+2025-04-27 10:30:09,210 INFO 	                    (43, 320),
+2025-04-27 10:30:09,210 INFO 	                    (44, 320),
+2025-04-27 10:30:09,211 INFO 	                    (45, 320),
+2025-04-27 10:30:09,211 INFO 	                    (46, 320),
+2025-04-27 10:30:09,211 INFO 	                    (47, 288),
+2025-04-27 10:30:09,211 INFO 	                    (48, 320),
+2025-04-27 10:30:09,211 INFO 	                    (49, 320),
+2025-04-27 10:30:09,211 INFO 	                    (50, 320)]}
+2025-04-27 10:30:09,211 INFO 
+2025-04-27 10:30:09,213 DEBUG ServerApp finished running.
+2025-04-27 10:30:09,213 DEBUG ServerApp finished running.
+2025-04-27 10:30:09,213 DEBUG Triggered stop event for Simulation Engine.
+2025-04-27 10:30:10,076 DEBUG Terminated 1 actors
+2025-04-27 10:30:11,707 DEBUG Terminated RayBackend
+2025-04-27 10:30:11,708 DEBUG Stopping Simulation Engine now.
