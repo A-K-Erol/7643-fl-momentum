@@ -20,10 +20,9 @@ def get_optimizer(params, optimizer=Config.OPTIMIZER):
                                eps=1e-08
                                ) # Mike
     elif optimizer == 'qhm':
-        from optimizers import QHM
-        return QHM(params)
+        return QHM(params, momentum=Config.MOMENTUM, nu=1.0)
     elif optimizer == 'accsgd':
-        return torch_optimizer.AccSGD(params, lr=0.1)  # Ansel
+        return torch_optimizer.AccSGD(params, lr=0.1, weight_decay =0.0001)
     else:
         print(f"Optimizer {optimizer} not recognized, using Adam by default.")
         return optim.Adam(params)

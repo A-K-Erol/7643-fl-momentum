@@ -1,10 +1,10 @@
 class Config:
-    NUM_CLIENTS = 2
-    NUM_ROUNDS = 1
+    NUM_CLIENTS = 10
+    NUM_ROUNDS = 20
     BATCH_SIZE = 32
     MODEL_NAME = "net"
-    DATASET = 'cifar100' # Literal['cifar10', 'cifar100', 'mnist']
-    PARTITIONER_TYPE = 'uniform' # Literal['uniform', 'dirichlet']
+    DATASET = 'cifar10' # Literal['cifar10', 'cifar100']
+    PARTITIONER_TYPE = 'dirichlet' # Literal['uniform', 'dirichlet']
     DIRILECT_ALPHA = 0.5 # parameter when using dirichlet (means how close to iid it is)
     OPTIMIZER='accsgd' # 'sgd', 'polyak', 'nesterov', 'rectified_adam', 'qhm', 'accsgd'
     LOCAL_EPOCHS=2
