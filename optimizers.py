@@ -13,7 +13,12 @@ def get_optimizer(params, optimizer=Config.OPTIMIZER):
     elif optimizer == 'nesterov':
         return optim.SGD(params, lr=Config.LEARNING_RATE, momentum=Config.MOMENTUM, nesterov=True)  # Aamir
     elif optimizer == 'rectified_adam':
-        return optim.RAdam(params)  # Mike
+        return optim.RAdam(params,
+                               lr= 0.0003,
+                               betas=(0.90, 0.999),
+                               weight_decay=0.0004,
+                               eps=1e-08
+                               ) # Mike
     elif optimizer == 'qhm':
         from optimizers import QHM
         return QHM(params)
