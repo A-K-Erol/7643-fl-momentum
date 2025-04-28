@@ -1,26 +1,20 @@
-# 7643-fl-momentum
+# Federated Learning with Momentum-Based Optimizers
 
-DL project group
+This repository accompanies our project on analyzing convergence and efficiency in Federated Learning (FL) with heterogeneous (non-IID) data. We perform a comparison of five advanced momentum-based optimizers within the FedAvg framework:
 
-Dependencies in the requirements.txt
-to run, python3 run.py
+- Polyak Momentum
+- Nesterov Accelerated Gradient (NAG)
+- Quasi-Hyperbolic Momentum (QHM)
+- Rectified Adam (RAdam)
+- Accelerated SGD (AccSGD)
 
-edit configuration in config.py (epochs, distirbution, etc.)
+Using PyTorch and the Flower FL platform, we benchmark these methods on CIFAR-10 and CIFAR-100, under both IID and Dirichlet $\alpha=0.5$ non-IID splits. Results show Polyak momentum (m=0.1) delivers the best performance in terms of convergence speed and final accuracy, with RAdam as a close second. Non-IID conditions significantly degrade performance across all optimizers.
 
-modify and update models and optimizers in models.py and optimizers.py
-
-mess with the aggregation strategies in strategies.py, fedavg is the default one i'm using for now. see docs
-
-** Notes 4/10**
-
-Implement a better model like resnet.
-Explore different optimizers
-Adam
-SGD
-Explore different momentums:
-Polyak
-Netsorov (Aamir)
-QHM (not in pytorch, but already implemented somewhere) (Alireza)
-Rectified Adam (Mike)
-ACC SGD (Ansel)
-Do we need momentum for server side aggregation or just client side is okay?
+## How to run
+- Dependencies in the requirements.txt, install using `pip install -r requirements.txt`
+- Edit configuration in config.py (epochs, distirbution, optimizer, etc.)
+- To run a flower simulation: `python3 run.py`
+    * Optional: Change logging info in run.py
+- Modify and update models and optimizers in models.py and optimizers.py
+- Create custom aggregation strategies in strategies.py, FedAvg is the default one.
+- Official flower documentation: https://flower.ai/docs/framework/
