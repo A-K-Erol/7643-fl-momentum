@@ -6,6 +6,7 @@ from config import Config
 import torch
 import torch.nn as nn
 import csv
+import os
 metrics : dict[str, float] = {}
 
 class FlowerClient(NumPyClient):
@@ -29,6 +30,13 @@ class FlowerClient(NumPyClient):
         set_parameters(self.net, parameters)
         # loss, accuracy = test(self.net, self.valloader)
         metrics = compute_metrics(self.net, self.valloader)
+
+        # Check if the results directory exists
+        if not os.path.exists("results"):
+            try:
+                os.makedirs("results")
+            except OSError as e:
+                print(f"Error creating directory 'results': {e}")
         
         with open(f"results/metrics_client_{self.partition_id}_{Config.DATASET}_{Config.OPTIMIZER}.csv", "a", newline="") as f:
             writer = csv.writer(f)
