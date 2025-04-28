@@ -21,7 +21,4 @@ def get_optimizer(params, optimizer=Config.OPTIMIZER):
         case _:
             print(f"Optimizer {optimizer} not recognized, using Adam by default.")
 
-
     return optim.Adam(params)
-
- 

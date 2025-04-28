@@ -24,6 +24,9 @@ if DEVICE == "cuda":
     backend_config = {"client_resources": {"num_cpus": 1, "num_gpus": 1.0}}
 
 # 1. Configure logging
+if not os.path.exists('results'):
+    os.makedirs('results')
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s %(message)s',
