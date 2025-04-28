@@ -11,9 +11,14 @@ def get_optimizer(params, optimizer=Config.OPTIMIZER):
         case 'polyak':
             return optim.SGD(params, lr=0.01, momentum=0.9)
         case 'nesterov':
-            return optim.SGD(params, lr=Config.LEARNING_RATE, momentum=Config.MOMENTUM, nesterov=True) # Aamir
-        case 'rectified_adam':
-            return optim.RAdam(params) # Mike
+            return optim.SGD(params, lr=0.01, momentum=0.9, nesterov=True) # Aamir
+        case 'r_adam':
+            return optim.RAdam(params,
+                               lr= 0.0003,
+                               betas=(0.90, 0.999),
+                               weight_decay=0.0004,
+                               eps=1e-08
+                               ) # Mike
         case 'qhm':
             return torch_optimizer.QHM(params) # Alireza
         case 'accsgd':

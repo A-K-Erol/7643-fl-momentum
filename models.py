@@ -86,12 +86,12 @@ def set_parameters(net, parameters: List[np.ndarray]):
 def get_parameters(net) -> List[np.ndarray]:
     return [val.cpu().numpy() for _, val in net.state_dict().items()]
 
-def check_centralized_accuracy(net, trainloader, valloader, testloader, epochs=5):
+def check_centralized_accuracy(net, trainloader, valloader, testloader, epochs=Config.LOCAL_EPOCHS):
     """Train the network and evaluate on the test set."""
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
     net = Net().to(DEVICE)
 
-    for epoch in range(5):
+    for epoch in range(epochs):
         train(net, trainloader, 1)
         loss, accuracy = test(net, valloader)
         print(f"Epoch {epoch+1}: validation loss {loss}, accuracy {accuracy}")
