@@ -6,6 +6,8 @@ ipython_config.py
 results_*
 dev.ipynb
 .gitignore
+results/
+.idea/
 
 
 
